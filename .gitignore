@@ -1,0 +1,9 @@
+wp-config.php
+local-xdebuginfo.php
+
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+
+.DS_Store
+Thumbs.db
