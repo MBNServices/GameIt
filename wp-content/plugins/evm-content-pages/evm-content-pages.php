@@ -104,8 +104,12 @@ function evm_content_page_01_shortcode( $atts ) {
 		array(
 			'primary_cta_url'  => '',
 			'whatsapp_url'     => '',
-			'hero_image_url'   => '',
-			'primary_cta_text' => '',
+			'hero_image_url'         => '',
+			'hero_video_mp4_url'     => '',
+			'hero_video_webm_url'    => '',
+			'hero_video_poster_url'  => '',
+			'hero_youtube_url'       => '',
+			'primary_cta_text'       => '',
 		),
 		(array) $atts,
 		'evm_content_page_01'
