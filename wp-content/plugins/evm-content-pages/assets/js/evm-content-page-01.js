@@ -10,7 +10,8 @@
   document.documentElement.classList.add("evm-content-page-01-active-root");
   document.documentElement.style.overflowX = "hidden";
 
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var prefersReducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var prefersReducedMotion = prefersReducedMotionQuery.matches;
 
   fitFullBleedSections();
   window.addEventListener("resize", debounce(fitFullBleedSections, 120));
@@ -19,35 +20,44 @@
     var revealItems = section.querySelectorAll(".evm-reveal");
     var counters = section.querySelectorAll("[data-count-value]");
 
+    setupReviewSlider(section);
+    setupReviewToggles(section);
+
     if (prefersReducedMotion || !("IntersectionObserver" in window)) {
       revealItems.forEach(function (item) {
         item.classList.add("is-visible");
       });
+    } else {
+      var revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.16,
+          rootMargin: "0px 0px -8% 0px"
+        }
+      );
+
+      revealItems.forEach(function (item) {
+        revealObserver.observe(item);
+      });
+    }
+
+    if (!counters.length) {
       return;
     }
 
-    var revealObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.16,
-        rootMargin: "0px 0px -8% 0px"
-      }
-    );
-
-    revealItems.forEach(function (item) {
-      revealObserver.observe(item);
-    });
-
-    if (!counters.length) {
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+      counters.forEach(function (counter) {
+        animateCounter(counter);
+      });
       return;
     }
 
@@ -108,12 +118,12 @@
       return;
     }
 
-    var duration = 1100;
+    var duration = prefersReducedMotion ? 0 : 1100;
     var start = performance.now();
     var hasDecimal = String(element.getAttribute("data-count-value")).indexOf(".") !== -1;
 
     function tick(now) {
-      var progress = Math.min((now - start) / duration, 1);
+      var progress = duration === 0 ? 1 : Math.min((now - start) / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3);
       var current = rawValue * eased;
 
@@ -133,5 +143,248 @@
     }
 
     window.requestAnimationFrame(tick);
+  }
+
+  function setupReviewToggles(section) {
+    var toggles = section.querySelectorAll(".evm-review-card__toggle");
+
+    toggles.forEach(function (toggle) {
+      toggle.addEventListener("click", function () {
+        var card = toggle.closest(".evm-review-card");
+        var text = card ? card.querySelector(".evm-review-card__text") : null;
+
+        if (!text) {
+          return;
+        }
+
+        var expanded = text.dataset.expanded === "true";
+        var nextExpanded = !expanded;
+
+        text.textContent = nextExpanded ? text.dataset.expandedText : text.dataset.collapsedText;
+        text.dataset.expanded = nextExpanded ? "true" : "false";
+        toggle.setAttribute("aria-expanded", nextExpanded ? "true" : "false");
+        toggle.textContent = nextExpanded ? "הצג פחות" : "קראו עוד";
+      });
+    });
+  }
+
+  function setupReviewSlider(section) {
+    var slider = section.querySelector(".evm-reviews__slider");
+
+    if (!slider) {
+      return;
+    }
+
+    var track = slider.querySelector(".evm-reviews__track");
+    var cards = Array.prototype.slice.call(slider.querySelectorAll(".evm-review-card"));
+    var nextButton = slider.querySelector(".evm-reviews__arrow--next");
+    var prevButton = slider.querySelector(".evm-reviews__arrow--prev");
+    var dotsRoot = slider.querySelector(".evm-reviews__dots");
+    var autoplayDelay = 7000;
+    var currentIndex = 0;
+    var autoplayId = null;
+    var pointerStartX = null;
+    var pointerDeltaX = 0;
+
+    if (!track || !cards.length) {
+      return;
+    }
+
+    var dots = cards.map(function (_, index) {
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "evm-reviews__dot";
+      dot.setAttribute("aria-label", "מעבר לביקורת " + (index + 1));
+      dot.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+      dot.addEventListener("click", function () {
+        goTo(index, true);
+      });
+      dotsRoot.appendChild(dot);
+      return dot;
+    });
+
+    function cardsPerView() {
+      if (window.innerWidth <= 700) {
+        return 1;
+      }
+
+      if (window.innerWidth <= 1024) {
+        return 2;
+      }
+
+      return 3;
+    }
+
+    function maxIndex() {
+      return Math.max(0, cards.length - cardsPerView());
+    }
+
+    function updateUi() {
+      var card = cards[Math.min(currentIndex, cards.length - 1)];
+      var left = card ? card.offsetLeft : 0;
+
+      track.scrollTo({
+        left: left,
+        behavior: prefersReducedMotion ? "auto" : "smooth"
+      });
+
+      cards.forEach(function (item, index) {
+        item.classList.toggle("is-active", index === Math.min(currentIndex + Math.floor(cardsPerView() / 2), cards.length - 1));
+      });
+
+      dots.forEach(function (dot, index) {
+        var active = index === currentIndex;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-pressed", active ? "true" : "false");
+        dot.setAttribute("aria-current", active ? "true" : "false");
+      });
+
+      if (prevButton) {
+        prevButton.disabled = currentIndex === 0;
+      }
+
+      if (nextButton) {
+        nextButton.disabled = currentIndex >= maxIndex();
+      }
+    }
+
+    function goTo(index, pauseAutoplay) {
+      currentIndex = Math.max(0, Math.min(index, maxIndex()));
+      updateUi();
+
+      if (pauseAutoplay) {
+        stopAutoplay();
+      }
+    }
+
+    function goNext(pauseAutoplay) {
+      if (currentIndex >= maxIndex()) {
+        goTo(0, pauseAutoplay);
+        return;
+      }
+
+      goTo(currentIndex + 1, pauseAutoplay);
+    }
+
+    function goPrev() {
+      if (currentIndex <= 0) {
+        goTo(maxIndex(), true);
+        return;
+      }
+
+      goTo(currentIndex - 1, true);
+    }
+
+    function stopAutoplay() {
+      if (autoplayId) {
+        window.clearInterval(autoplayId);
+        autoplayId = null;
+      }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+
+      if (prefersReducedMotion || cards.length <= cardsPerView()) {
+        return;
+      }
+
+      autoplayId = window.setInterval(function () {
+        if (document.hidden) {
+          return;
+        }
+
+        goNext(false);
+      }, autoplayDelay);
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", function () {
+        goNext(true);
+      });
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", function () {
+        goPrev();
+      });
+    }
+
+    track.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        goNext(true);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        goPrev();
+      }
+    });
+
+    slider.addEventListener("mouseenter", stopAutoplay);
+    slider.addEventListener("mouseleave", startAutoplay);
+    slider.addEventListener("focusin", stopAutoplay);
+    slider.addEventListener("focusout", startAutoplay);
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+
+    track.addEventListener("pointerdown", function (event) {
+      pointerStartX = event.clientX;
+      pointerDeltaX = 0;
+    });
+
+    track.addEventListener("pointermove", function (event) {
+      if (pointerStartX === null) {
+        return;
+      }
+
+      pointerDeltaX = event.clientX - pointerStartX;
+    });
+
+    track.addEventListener("pointerup", function () {
+      if (pointerStartX === null) {
+        return;
+      }
+
+      if (Math.abs(pointerDeltaX) > 40) {
+        if (pointerDeltaX < 0) {
+          goNext(true);
+        } else {
+          goPrev();
+        }
+      }
+
+      pointerStartX = null;
+      pointerDeltaX = 0;
+    });
+
+    track.addEventListener("pointercancel", function () {
+      pointerStartX = null;
+      pointerDeltaX = 0;
+    });
+
+    window.addEventListener("resize", debounce(function () {
+      currentIndex = Math.min(currentIndex, maxIndex());
+      updateUi();
+      startAutoplay();
+    }, 150));
+
+    if (prefersReducedMotionQuery.addEventListener) {
+      prefersReducedMotionQuery.addEventListener("change", function (event) {
+        prefersReducedMotion = event.matches;
+        updateUi();
+        startAutoplay();
+      });
+    }
+
+    updateUi();
+    startAutoplay();
   }
 })();

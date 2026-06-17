@@ -167,38 +167,46 @@ function evm_get_content_page_01_defaults() {
 			),
 		),
 		'experiences'        => array(
-			'eyebrow' => 'התאמה לכל הרכב',
-			'title'   => 'חוויות שמרגישות תפורות לקבוצה',
+			'eyebrow' => 'התאמה לכל קבוצה',
+			'title'   => 'לכל קבוצה יש את המשימה שלה',
+			'description' => 'מחפשים ערב חברים, יום הולדת, דייט או גיבוש לצוות? החוויה מתאימה את עצמה לאנשים שמגיעים איתכם.',
 			'items'   => array(
 				array(
+					'modifier'    => 'friends',
 					'icon'        => 'group',
-					'title'       => 'חברים',
-					'description' => 'אקשן, תחרות, צחוק ורגעים שמרימים את כל החבורה.',
+					'title'       => 'ערב חברים עם אקשן',
+					'description' => 'תחרות, חידות, לחץ זמן והמון צחוק. בדיוק הערב שמוציא את כולם מהשגרה ונותן לכם סיפור לדבר עליו גם למחרת.',
 				),
 				array(
+					'modifier'    => 'family',
 					'icon'        => 'home',
-					'title'       => 'משפחות',
-					'description' => 'פעילות משותפת שמחברת בין דורות ומערבת את כולם באמת.',
+					'title'       => 'חוויה שמחברת את המשפחה',
+					'description' => 'ילדים ומבוגרים נכנסים לאותה משימה, משתפים פעולה, מגלים מי חושב מהר ומי נשאר רגוע כשהשעון מתקתק.',
 				),
 				array(
+					'modifier'    => 'birthday',
 					'icon'        => 'cake',
-					'title'       => 'ימי הולדת',
-					'description' => 'חגיגה שמרגישה מושקעת, מרגשת ומלאה באנרגיה טובה.',
+					'title'       => 'יום הולדת שלא נשאר רק בתמונות',
+					'description' => 'חוויה מלאה באקשן, משימות והפתעות שהופכת את החגיגה להרפתקה שכולם משתתפים בה.',
 				),
 				array(
+					'modifier'    => 'team',
 					'icon'        => 'briefcase',
-					'title'       => 'גיבוש עובדים',
-					'description' => 'חוויה שמוציאה מהשגרה ומייצרת שיתוף פעולה אמיתי בין אנשים.',
+					'title'       => 'גיבוש שמוציא את הצוות מהמסך',
+					'description' => 'משימה קבוצתית שחושפת מנהיגות, חשיבה, תקשורת ושיתוף פעולה, באווירה משוחררת, מצחיקה ותחרותית.',
 				),
 				array(
+					'modifier'    => 'couples',
 					'icon'        => 'heart',
-					'title'       => 'זוגות',
-					'description' => 'דייט אחר, חד, מפתיע ועם הרבה יותר חוויה מסתם עוד ערב בחוץ.',
+					'title'       => 'דייט זוגי שלא מרגיש כמו עוד דייט',
+					'description' => 'חוויה מצחיקה, תחרותית ומלאת אדרנלין, שמוציאה אתכם מהשגרה ונותנת לכם משהו אמיתי לעבור יחד.',
+					'supporting_line' => 'מתאים לדייט ראשון, ערב זוגי או הפתעה לא שגרתית',
 				),
 				array(
+					'modifier'    => 'private',
 					'icon'        => 'vip',
-					'title'       => 'VIP',
-					'description' => 'אירוח יוקרתי, פרטי ומדויק למי שמחפש חוויה ברמה אחרת.',
+					'title'       => 'אירוע פרטי במתחם',
+					'description' => 'חוויה פרטית לקבוצה שלכם, עם יותר מרחב, אווירה אישית ואפשרות להתאים את הפעילות לאירוע שאתם מתכננים.',
 				),
 			),
 		),
@@ -253,39 +261,94 @@ function evm_get_content_page_01_defaults() {
 			'villains_room_video_poster_url' => '',
 			'villains_room_youtube_url'      => '',
 		),
-		'why'                => array(
-			'eyebrow' => 'למה דווקא אצלנו',
-			'title'   => 'למה לבחור ב-GameIt',
-			'items'   => array(
+		'reviews'            => array(
+			'eyebrow'  => 'ביקורות אמיתיות',
+			'title'    => 'מה מספרים מי שכבר נכנסו למשימה?',
+			'subtitle' => 'משפחות, חברים, זוגות וצוותים כבר שיחקו אצלנו. הנה כמה מהחוויות שהם בחרו לשתף.',
+			'items'    => array(
 				array(
-					'icon'        => 'spark',
-					'title'       => 'חוויה שמרגישה יוקרתית',
-					'description' => 'מהעיצוב ועד ההפעלה, הכול בנוי כדי להרגיש מושקע ולא גנרי.',
+					'id'             => 'placeholder-review-1',
+					'author'         => 'מבקר לדוגמה 1',
+					'rating'         => 5,
+					'text'           => 'ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.',
+					'date_label'     => 'לפני חודש',
+					'review_url'     => '',
+					'photo_url'      => '',
+					'source'         => 'google',
+					'source_label'   => 'Google',
+					'is_placeholder' => true,
 				),
 				array(
-					'icon'        => 'group',
-					'title'       => 'מתאים לקבוצות שונות',
-					'description' => 'מכמה חברים ועד צוותים, משפחות ואירועים פרטיים.',
+					'id'             => 'placeholder-review-2',
+					'author'         => 'מבקר לדוגמה 2',
+					'rating'         => 5,
+					'text'           => 'ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.',
+					'date_label'     => 'לפני חודשיים',
+					'review_url'     => '',
+					'photo_url'      => '',
+					'source'         => 'google',
+					'source_label'   => 'Google',
+					'is_placeholder' => true,
 				),
 				array(
-					'icon'        => 'clock',
-					'title'       => 'קצב שמחזיק אנרגיה',
-					'description' => 'אין רגעים מתים. החוויה נשארת חדה, זורמת ומרתקת.',
+					'id'             => 'placeholder-review-3',
+					'author'         => 'מבקר לדוגמה 3',
+					'rating'         => 5,
+					'text'           => 'ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.',
+					'date_label'     => 'לפני שלושה חודשים',
+					'review_url'     => '',
+					'photo_url'      => '',
+					'source'         => 'google',
+					'source_label'   => 'Google',
+					'is_placeholder' => true,
 				),
 				array(
-					'icon'        => 'shield',
-					'title'       => 'הפעלה מסודרת ובטוחה',
-					'description' => 'תדרוך ברור, צוות מקצועי, וסביבה שמאפשרת ליהנות בראש שקט.',
+					'id'             => 'placeholder-review-4',
+					'author'         => 'מבקר לדוגמה 4',
+					'rating'         => 5,
+					'text'           => 'ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.',
+					'date_label'     => 'לפני ארבעה חודשים',
+					'review_url'     => '',
+					'photo_url'      => '',
+					'source'         => 'google',
+					'source_label'   => 'Google',
+					'is_placeholder' => true,
 				),
 				array(
-					'icon'        => 'location',
-					'title'       => 'מיקום נוח במרכז',
-					'description' => 'קל להגיע, קל לארגן, וקל להפוך את זה לערב שכולם זוכרים.',
+					'id'             => 'placeholder-review-5',
+					'author'         => 'מבקר לדוגמה 5',
+					'rating'         => 5,
+					'text'           => 'ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.',
+					'date_label'     => 'לפני חמישה חודשים',
+					'review_url'     => '',
+					'photo_url'      => '',
+					'source'         => 'google',
+					'source_label'   => 'Google',
+					'is_placeholder' => true,
+				),
+			),
+			'trust_cards' => array(
+				array(
+					'icon'        => 'smile',
+					'value'       => '+2,000',
+					'numeric'     => '2000',
+					'label'       => 'משתתפים מרוצים',
+					'description' => 'קבוצות, חברים, משפחות וצוותים שכבר עברו את החוויה.',
+				),
+				array(
+					'icon'        => 'star-outline',
+					'value'       => '5.0',
+					'numeric'     => '5.0',
+					'label'       => 'דירוג ממוצע',
+					'description' => 'רמת שביעות רצון שמצביעה על חוויה חזקה ומדויקת.',
 				),
 				array(
 					'icon'        => 'trophy',
-					'title'       => 'המלצות שמגבות את ההבטחה',
-					'description' => 'ביקורות חזקות וקבוצות חוזרות שמוכיחות שהחוויה באמת עובדת.',
+					'value'       => '+240',
+					'numeric'     => '240',
+					'label'       => 'ביקורות מאומתות',
+					'description' => 'לקוחות אמיתיים ששיחקו, נהנו ובחרו להמליץ.',
+					'modifier'    => 'verified-reviews',
 				),
 			),
 		),
@@ -323,29 +386,6 @@ function evm_get_content_page_01_defaults() {
 			'primary_cta_url'    => '#booking',
 			'secondary_cta_text' => 'דברו איתנו בוואטסאפ',
 			'secondary_cta_url'  => 'https://wa.me/972500000000',
-		),
-		'stats'              => array(
-			array(
-				'icon'        => 'trophy',
-				'value'       => '240+',
-				'numeric'     => '240',
-				'label'       => 'ביקורות מאומתות',
-				'description' => 'לקוחות אמיתיים שכבר היו, שיחקו וחזרו להמליץ.',
-			),
-			array(
-				'icon'        => 'star-outline',
-				'value'       => '5.0',
-				'numeric'     => '5.0',
-				'label'       => 'דירוג ממוצע',
-				'description' => 'רמת שביעות רצון שמציבה רף ברור לחוויה כולה.',
-			),
-			array(
-				'icon'        => 'smile',
-				'value'       => '2,000+',
-				'numeric'     => '2000',
-				'label'       => 'משתתפים מרוצים',
-				'description' => 'קבוצות, חברים, משפחות וצוותים שכבר עברו את החוויה.',
-			),
 		),
 	);
 }
@@ -403,6 +443,156 @@ function evm_content_page_01_icon_html( $icon ) {
 		)
 	);
 }
+
+/**
+ * Returns the cron schedule slug for weekly review refreshes.
+ *
+ * @return string
+ */
+function evm_content_page_01_reviews_schedule_slug() {
+	return 'evm_content_page_01_weekly_reviews';
+}
+
+/**
+ * Returns the transient key used for cached reviews.
+ *
+ * @return string
+ */
+function evm_content_page_01_reviews_cache_key() {
+	return 'evm_content_page_01_reviews_cache';
+}
+
+/**
+ * Fetches Google reviews server-side.
+ *
+ * Placeholder implementation until API access is approved.
+ *
+ * @return array<int, array<string, mixed>>
+ */
+function evm_content_page_01_fetch_google_reviews() {
+	return array();
+}
+
+/**
+ * Normalizes review payloads into the frontend review shape.
+ *
+ * @param array<int, array<string, mixed>> $reviews Raw review records.
+ * @return array<int, array<string, mixed>>
+ */
+function evm_content_page_01_normalize_google_reviews( $reviews ) {
+	$normalized = array();
+
+	foreach ( $reviews as $index => $review ) {
+		$normalized[] = array(
+			'id'             => ! empty( $review['id'] ) ? sanitize_key( (string) $review['id'] ) : 'review-' . ( $index + 1 ),
+			'author'         => ! empty( $review['author'] ) ? (string) $review['author'] : '',
+			'rating'         => isset( $review['rating'] ) ? (int) $review['rating'] : 0,
+			'text'           => ! empty( $review['text'] ) ? (string) $review['text'] : '',
+			'date_label'     => ! empty( $review['date_label'] ) ? (string) $review['date_label'] : '',
+			'review_url'     => ! empty( $review['review_url'] ) ? esc_url_raw( (string) $review['review_url'] ) : '',
+			'photo_url'      => ! empty( $review['photo_url'] ) ? esc_url_raw( (string) $review['photo_url'] ) : '',
+			'source'         => ! empty( $review['source'] ) ? sanitize_key( (string) $review['source'] ) : 'google',
+			'source_label'   => ! empty( $review['source_label'] ) ? (string) $review['source_label'] : 'Google',
+			'is_placeholder' => ! empty( $review['is_placeholder'] ),
+		);
+	}
+
+	return $normalized;
+}
+
+/**
+ * Returns cached reviews, if any.
+ *
+ * @return array<int, array<string, mixed>>
+ */
+function evm_content_page_01_get_cached_reviews() {
+	$cached = get_transient( evm_content_page_01_reviews_cache_key() );
+
+	return is_array( $cached ) ? $cached : array();
+}
+
+/**
+ * Saves normalized reviews to cache.
+ *
+ * @param array<int, array<string, mixed>> $reviews Reviews to cache.
+ * @return bool
+ */
+function evm_content_page_01_save_cached_reviews( $reviews ) {
+	return set_transient( evm_content_page_01_reviews_cache_key(), $reviews, WEEK_IN_SECONDS );
+}
+
+/**
+ * Clears the cached reviews payload.
+ *
+ * @return bool
+ */
+function evm_content_page_01_clear_reviews_cache() {
+	return delete_transient( evm_content_page_01_reviews_cache_key() );
+}
+
+/**
+ * Schedules weekly review refreshes.
+ *
+ * @return void
+ */
+function evm_content_page_01_schedule_weekly_reviews_refresh() {
+	$hook = 'evm_content_page_01_reviews_refresh';
+
+	if ( ! wp_next_scheduled( $hook ) ) {
+		wp_schedule_event( time() + HOUR_IN_SECONDS, evm_content_page_01_reviews_schedule_slug(), $hook );
+	}
+}
+
+/**
+ * Returns reviews in priority order: cached, fetched, fallback.
+ *
+ * @param array<int, array<string, mixed>> $fallback_reviews Fallback reviews.
+ * @return array<int, array<string, mixed>>
+ */
+function evm_content_page_01_get_reviews( $fallback_reviews ) {
+	$cached_reviews = evm_content_page_01_get_cached_reviews();
+
+	if ( ! empty( $cached_reviews ) ) {
+		return evm_content_page_01_normalize_google_reviews( $cached_reviews );
+	}
+
+	$fetched_reviews = evm_content_page_01_fetch_google_reviews();
+
+	if ( ! empty( $fetched_reviews ) ) {
+		$normalized = evm_content_page_01_normalize_google_reviews( $fetched_reviews );
+
+		if ( ! empty( $normalized ) ) {
+			evm_content_page_01_save_cached_reviews( $normalized );
+			return $normalized;
+		}
+	}
+
+	return evm_content_page_01_normalize_google_reviews( $fallback_reviews );
+}
+
+add_filter(
+	'cron_schedules',
+	static function ( $schedules ) {
+		$schedules[ evm_content_page_01_reviews_schedule_slug() ] = array(
+			'interval' => WEEK_IN_SECONDS,
+			'display'  => __( 'Once Weekly (EVM Reviews)', 'evm-content-pages' ),
+		);
+
+		return $schedules;
+	}
+);
+
+add_action( 'init', 'evm_content_page_01_schedule_weekly_reviews_refresh' );
+add_action(
+	'evm_content_page_01_reviews_refresh',
+	static function () {
+		$reviews = evm_content_page_01_normalize_google_reviews( evm_content_page_01_fetch_google_reviews() );
+
+		if ( ! empty( $reviews ) ) {
+			evm_content_page_01_save_cached_reviews( $reviews );
+		}
+	}
+);
 
 /**
  * Converts a YouTube watch/share URL to a quiet embed URL for optional fallback use.
@@ -505,6 +695,18 @@ function evm_render_content_page_01( $attributes ) {
 		$content['hero']['primary_cta_text']      = $attributes['primary_cta_text'];
 		$content['final_cta']['primary_cta_text'] = $attributes['primary_cta_text'];
 	}
+
+	$reviews                 = evm_content_page_01_get_reviews( $content['reviews']['items'] );
+	$review_count            = count( $reviews );
+	$placeholder_reviews_on  = ! empty(
+		array_filter(
+			$reviews,
+			static function ( $review ) {
+				return ! empty( $review['is_placeholder'] );
+			}
+		)
+	);
+	$show_reviews_dev_notice = $placeholder_reviews_on && defined( 'WP_DEBUG' ) && WP_DEBUG && current_user_can( 'manage_options' );
 
 	$hero_has_native_video = ! empty( $content['hero']['hero_video_mp4_url'] ) || ! empty( $content['hero']['hero_video_webm_url'] );
 	$hero_youtube_embed    = $hero_has_native_video ? '' : evm_content_page_01_get_youtube_embed_url( $content['hero']['hero_youtube_url'] );
@@ -683,17 +885,6 @@ function evm_render_content_page_01( $attributes ) {
 						<p class="evm-hook-section__description"><?php echo esc_html( $content['pain']['description'] ); ?></p>
 						<p class="evm-hook-section__supporting-line"><?php echo esc_html( $content['pain']['supporting_line'] ); ?></p>
 
-						<div class="evm-hook-section__mini-grid">
-							<?php foreach ( $content['pain']['hook_cards'] as $index => $card ) : ?>
-								<article class="evm-hook-section__mini-card evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
-									<div class="evm-hook-section__mini-icon" aria-hidden="true">
-										<?php echo evm_content_page_01_icon_html( ! empty( $card['icon'] ) ? $card['icon'] : 'spark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-									</div>
-									<h3 class="evm-hook-section__mini-title"><?php echo esc_html( $card['title'] ); ?></h3>
-									<p class="evm-hook-section__mini-text"><?php echo esc_html( $card['text'] ); ?></p>
-								</article>
-							<?php endforeach; ?>
-						</div>
 					</div>
 
 					<div class="evm-hook-section__visual evm-reveal" data-reveal="fade-up">
@@ -728,6 +919,18 @@ function evm_render_content_page_01( $attributes ) {
 								</article>
 								</div>
 						</div>
+					</div>
+
+					<div class="evm-hook-section__mini-grid">
+						<?php foreach ( $content['pain']['hook_cards'] as $index => $card ) : ?>
+							<article class="evm-hook-section__mini-card evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
+								<div class="evm-hook-section__mini-icon" aria-hidden="true">
+									<?php echo evm_content_page_01_icon_html( ! empty( $card['icon'] ) ? $card['icon'] : 'spark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</div>
+								<h3 class="evm-hook-section__mini-title"><?php echo esc_html( $card['title'] ); ?></h3>
+								<p class="evm-hook-section__mini-text"><?php echo esc_html( $card['text'] ); ?></p>
+							</article>
+						<?php endforeach; ?>
 					</div>
 				</div>
 			</section>
@@ -825,52 +1028,127 @@ function evm_render_content_page_01( $attributes ) {
 				<div class="evm-content-page-01__section-copy evm-reveal" data-reveal="fade-up">
 					<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['experiences']['eyebrow'] ); ?></p>
 					<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['experiences']['title'] ); ?></h2>
+					<p class="evm-content-page-01__section-description evm-content-page-01__section-description--experiences"><?php echo esc_html( $content['experiences']['description'] ); ?></p>
 				</div>
 				<div class="evm-content-page-01__experience-grid">
 					<?php foreach ( $content['experiences']['items'] as $index => $item ) : ?>
-						<article class="evm-content-page-01__experience-card evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
+						<article class="evm-content-page-01__experience-card<?php echo ! empty( $item['modifier'] ) ? ' evm-content-page-01__experience-card--' . sanitize_html_class( $item['modifier'] ) : ''; ?> evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
 							<div class="evm-content-page-01__icon evm-content-page-01__icon--large" aria-hidden="true">
 								<?php echo evm_content_page_01_icon_html( $item['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							</div>
 							<h3><?php echo esc_html( $item['title'] ); ?></h3>
 							<p><?php echo esc_html( $item['description'] ); ?></p>
+							<?php if ( ! empty( $item['supporting_line'] ) ) : ?>
+								<p class="evm-content-page-01__experience-supporting-line"><?php echo esc_html( $item['supporting_line'] ); ?></p>
+							<?php endif; ?>
 						</article>
 					<?php endforeach; ?>
 				</div>
 			</section>
 
-			<section class="evm-content-page-01__section evm-content-page-01__section--why">
-				<div class="evm-content-page-01__section-copy evm-reveal" data-reveal="fade-up">
-					<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['why']['eyebrow'] ); ?></p>
-					<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['why']['title'] ); ?></h2>
-				</div>
-				<div class="evm-content-page-01__benefits-grid">
-					<?php foreach ( $content['why']['items'] as $index => $benefit ) : ?>
-						<article class="evm-content-page-01__benefit-card evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
-							<div class="evm-content-page-01__icon" aria-hidden="true">
-								<?php echo evm_content_page_01_icon_html( $benefit['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-							</div>
-							<h3><?php echo esc_html( $benefit['title'] ); ?></h3>
-							<p><?php echo esc_html( $benefit['description'] ); ?></p>
-						</article>
-					<?php endforeach; ?>
-				</div>
-			</section>
-
-			<section class="evm-content-page-01__section evm-content-page-01__section--stats">
-				<div class="evm-content-page-01__stats">
-					<?php foreach ( $content['stats'] as $index => $stat ) : ?>
-						<div class="evm-content-page-01__stat evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.08 * ( $index + 1 ) ) . 's;' ); ?>">
-							<div class="evm-content-page-01__icon" aria-hidden="true">
-								<?php echo evm_content_page_01_icon_html( $stat['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-							</div>
-							<div class="evm-content-page-01__stat-content">
-								<div class="evm-content-page-01__stat-value" data-count-value="<?php echo esc_attr( $stat['numeric'] ); ?>" data-count-display="<?php echo esc_attr( $stat['value'] ); ?>"><?php echo esc_html( $stat['value'] ); ?></div>
-								<div class="evm-content-page-01__stat-label"><?php echo esc_html( $stat['label'] ); ?></div>
-								<div class="evm-content-page-01__stat-description"><?php echo esc_html( $stat['description'] ); ?></div>
-							</div>
+			<section class="evm-content-page-01__section evm-content-page-01__section--reviews">
+				<div class="evm-reviews">
+					<div class="evm-reviews__inner">
+						<div class="evm-reviews__header evm-reveal" data-reveal="fade-up">
+							<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['reviews']['eyebrow'] ); ?></p>
+							<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['reviews']['title'] ); ?></h2>
+							<p class="evm-content-page-01__section-description"><?php echo esc_html( $content['reviews']['subtitle'] ); ?></p>
+							<?php if ( $show_reviews_dev_notice ) : ?>
+								<p class="evm-reviews__notice"><?php esc_html_e( 'ביקורות הפיתוח הזמניות פעילות כעת עד לחיבור Google Business Profile API.', 'evm-content-pages' ); ?></p>
+							<?php endif; ?>
 						</div>
-					<?php endforeach; ?>
+
+						<div class="evm-reviews__slider evm-reveal" data-reveal="fade-up" dir="rtl" data-review-count="<?php echo esc_attr( $review_count ); ?>">
+							<div class="evm-reviews__viewport">
+								<div class="evm-reviews__track" tabindex="0" aria-label="<?php esc_attr_e( 'סליידר ביקורות', 'evm-content-pages' ); ?>">
+									<?php foreach ( $reviews as $index => $review ) : ?>
+										<?php
+										$review_id         = ! empty( $review['id'] ) ? $review['id'] : 'review-' . ( $index + 1 );
+										$review_author     = ! empty( $review['author'] ) ? $review['author'] : '';
+										$review_rating     = ! empty( $review['rating'] ) ? max( 1, min( 5, (int) $review['rating'] ) ) : 5;
+										$review_text       = ! empty( $review['text'] ) ? (string) $review['text'] : '';
+										$review_excerpt    = wp_html_excerpt( $review_text, 160, '...' );
+										$review_text_size  = function_exists( 'mb_strlen' ) ? mb_strlen( wp_strip_all_tags( $review_text ) ) : strlen( wp_strip_all_tags( $review_text ) );
+										$review_excerpt_size = function_exists( 'mb_strlen' ) ? mb_strlen( wp_strip_all_tags( $review_excerpt ) ) : strlen( wp_strip_all_tags( $review_excerpt ) );
+										$review_is_long    = $review_text_size > $review_excerpt_size;
+										$review_source     = ! empty( $review['source_label'] ) ? $review['source_label'] : 'Google';
+										$review_photo_url  = ! empty( $review['photo_url'] ) ? $review['photo_url'] : '';
+										$review_url        = ! empty( $review['review_url'] ) ? $review['review_url'] : '';
+										?>
+										<article class="evm-review-card<?php echo 0 === $index ? ' is-active' : ''; ?>" data-review-index="<?php echo esc_attr( $index ); ?>" data-review-id="<?php echo esc_attr( $review_id ); ?>">
+											<div class="evm-review-card__top">
+												<div class="evm-review-card__identity">
+													<div class="evm-review-card__avatar">
+														<?php if ( ! empty( $review_photo_url ) ) : ?>
+															<img src="<?php echo esc_url( $review_photo_url ); ?>" alt="<?php echo esc_attr( sprintf( 'תמונת הפרופיל של %s', $review_author ) ); ?>">
+														<?php else : ?>
+															<span aria-label="<?php echo esc_attr( sprintf( 'אווטאר חלופי עבור %s', $review_author ) ); ?>"><?php echo esc_html( function_exists( 'mb_substr' ) ? mb_substr( $review_author, 0, 1 ) : substr( $review_author, 0, 1 ) ); ?></span>
+														<?php endif; ?>
+													</div>
+													<div class="evm-review-card__author">
+														<strong><?php echo esc_html( $review_author ); ?></strong>
+														<span class="evm-review-card__date"><?php echo esc_html( $review['date_label'] ); ?></span>
+													</div>
+												</div>
+											</div>
+											<div class="evm-review-card__rating" aria-label="<?php echo esc_attr( sprintf( '%d מתוך 5', $review_rating ) ); ?>">
+												<div class="evm-review-card__stars" aria-hidden="true">
+													<?php for ( $star = 0; $star < 5; $star++ ) : ?>
+														<span class="evm-review-card__star<?php echo $star < $review_rating ? ' is-filled' : ''; ?>">
+															<?php echo evm_content_page_01_icon_html( 'star' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+														</span>
+													<?php endfor; ?>
+												</div>
+												<span class="screen-reader-text"><?php echo esc_html( sprintf( '%d מתוך 5', $review_rating ) ); ?></span>
+											</div>
+											<div class="evm-review-card__body">
+												<p class="evm-review-card__text" data-collapsed-text="<?php echo esc_attr( $review_excerpt ); ?>" data-expanded-text="<?php echo esc_attr( $review_text ); ?>" data-expanded="false"><?php echo esc_html( $review_is_long ? $review_excerpt : $review_text ); ?></p>
+												<?php if ( $review_is_long ) : ?>
+													<button class="evm-review-card__toggle" type="button" aria-expanded="false">
+														<?php esc_html_e( 'קראו עוד', 'evm-content-pages' ); ?>
+													</button>
+												<?php endif; ?>
+											</div>
+											<div class="evm-review-card__source">
+												<span><?php echo esc_html( $review_source ); ?></span>
+												<?php if ( ! empty( $review_url ) ) : ?>
+													<a href="<?php echo esc_url( $review_url ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'לצפייה בגוגל', 'evm-content-pages' ); ?></a>
+												<?php endif; ?>
+											</div>
+										</article>
+									<?php endforeach; ?>
+								</div>
+							</div>
+							<div class="evm-reviews__controls">
+								<button class="evm-reviews__arrow evm-reviews__arrow--next" type="button" aria-label="<?php esc_attr_e( 'הביקורת הבאה', 'evm-content-pages' ); ?>">
+									<?php echo evm_content_page_01_icon_html( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</button>
+								<button class="evm-reviews__arrow evm-reviews__arrow--prev" type="button" aria-label="<?php esc_attr_e( 'הביקורת הקודמת', 'evm-content-pages' ); ?>">
+									<?php echo evm_content_page_01_icon_html( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</button>
+							</div>
+							<div class="evm-reviews__dots" aria-label="<?php esc_attr_e( 'ניווט ביקורות', 'evm-content-pages' ); ?>"></div>
+						</div>
+
+						<div class="evm-reviews__trust-grid">
+							<?php foreach ( $content['reviews']['trust_cards'] as $index => $card ) : ?>
+								<?php
+								$trust_card_classes = 'evm-reviews__trust-card evm-reveal';
+								if ( ! empty( $card['modifier'] ) ) {
+									$trust_card_classes .= ' evm-reviews__trust-card--' . sanitize_html_class( $card['modifier'] );
+								}
+								?>
+								<div class="<?php echo esc_attr( $trust_card_classes ); ?>" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.08 * ( $index + 1 ) ) . 's;' ); ?>">
+									<div class="evm-reviews__trust-icon" aria-hidden="true">
+										<?php echo evm_content_page_01_icon_html( $card['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									</div>
+									<div class="evm-reviews__trust-value" data-count-value="<?php echo esc_attr( $card['numeric'] ); ?>" data-count-display="<?php echo esc_attr( $card['value'] ); ?>"><?php echo esc_html( $card['value'] ); ?></div>
+									<div class="evm-reviews__trust-label"><?php echo esc_html( $card['label'] ); ?></div>
+									<div class="evm-reviews__trust-text"><?php echo esc_html( $card['description'] ); ?></div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
 				</div>
 			</section>
 
