@@ -8,6 +8,70 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Returns fallback menu items for the GameIt header.
+ *
+ * @return array<int, array<string, string>>
+ */
+function evm_content_page_01_get_header_fallback_menu_items() {
+	return array(
+		array(
+			'label' => 'החדרים',
+			'url'   => '#rooms',
+		),
+		array(
+			'label' => 'למי זה מתאים',
+			'url'   => '#audiences',
+		),
+		array(
+			'label' => 'ביקורות',
+			'url'   => '#reviews',
+		),
+		array(
+			'label' => 'שאלות נפוצות',
+			'url'   => '#faq',
+		),
+	);
+}
+
+/**
+ * Returns the shared GameIt header navigation markup.
+ *
+ * @return string
+ */
+function evm_content_page_01_get_header_navigation_markup() {
+	$menu_markup = wp_nav_menu(
+		array(
+			'theme_location' => 'evm_gameit_primary_navigation',
+			'container'      => false,
+			'echo'           => false,
+			'fallback_cb'    => false,
+			'menu_class'     => 'evm-gameit-header__menu',
+			'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+			'depth'          => 1,
+		)
+	);
+
+	if ( ! empty( $menu_markup ) ) {
+		return (string) $menu_markup;
+	}
+
+	$fallback_items = evm_content_page_01_get_header_fallback_menu_items();
+
+	ob_start();
+	?>
+	<ul class="evm-gameit-header__menu">
+		<?php foreach ( $fallback_items as $item ) : ?>
+			<li class="menu-item">
+				<a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['label'] ); ?></a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+
+	return (string) ob_get_clean();
+}
+
+/**
  * Returns the default editable content for page 01.
  *
  * Update these values to change the default copy, stats, cards, media labels,
@@ -273,6 +337,45 @@ function evm_get_content_page_01_defaults() {
 			'villains_room_video_webm_url'   => '',
 			'villains_room_video_poster_url' => '',
 			'villains_room_youtube_url'      => '',
+		),
+		'room_selection'     => array(
+			'eyebrow'     => 'בחרו את המשימה שלכם',
+			'title'       => 'שני חדרים. שתי חוויות. איזו משימה מחכה לכם?',
+			'description' => 'בחרו את החדר שמתאים לקבוצה שלכם והתחילו את החוויה.',
+			'rooms'       => array(
+				array(
+					'modifier'    => 'heroes',
+					'label'       => 'חדר הדגל שלנו',
+					'name'        => 'גיבורים נגד נבלים',
+					'headline'    => 'העולם מחכה להכרעה',
+					'description' => 'שתי קבוצות נכנסות למשימה אחת, כל צד מנסה להשפיע על מהלך המשחק ולהפוך את הקרב ברגע.',
+					'metadata'    => array(
+						array( 'icon' => 'group', 'text' => '2 קבוצות במקביל' ),
+						array( 'icon' => 'shield', 'text' => 'קיר משותף, משימות והפתעות' ),
+						array( 'icon' => 'home', 'text' => 'מתאים למשפחות, חברים וקבוצות' ),
+					),
+					'cta_text'    => 'לפרטים והזמנה',
+					'cta_url'     => '#booking',
+					'image_url'   => EVM_CONTENT_PAGES_URL . 'assets/images/room-heroes-villains.webp',
+					'image_alt'   => 'גיבורים נגד נבלים',
+				),
+				array(
+					'modifier'    => 'shadows',
+					'label'       => 'חדר פנטזיה מסתורי',
+					'name'        => 'ספר הצללים',
+					'headline'    => 'השער לעולם הרוחות נפתח',
+					'description' => 'ספר עתיק שמר במשך אלפי שנים על השער לעולם הרוחות, עד שטעות גורלית שחררה את כוחות האופל. היכנסו לעולם קסום ומסתורי, פתרו את הסודות והחזירו את האור לפני שיהיה מאוחר מדי.',
+					'metadata'    => array(
+						array( 'icon' => 'group', 'text' => 'משפחות, חברים וגיבושי צוותים' ),
+						array( 'icon' => 'group', 'text' => 'עד 8-10 משתתפים' ),
+						array( 'icon' => 'spark', 'text' => 'מומלץ מגיל 10' ),
+					),
+					'cta_text'    => 'לפרטים והזמנה',
+					'cta_url'     => 'https://gameit.co.il/%D7%A1%D7%A4%D7%A8-%D7%94%D7%A6%D7%9C%D7%9C%D7%99%D7%9D-%D7%97%D7%93%D7%A8-%D7%91%D7%A8%D7%99%D7%97%D7%94/',
+					'image_url'   => EVM_CONTENT_PAGES_URL . 'assets/images/room-book-of-shadows.webp',
+					'image_alt'   => 'ספר הצללים',
+				),
+			),
 		),
 		'reviews'            => array(
 			'eyebrow'  => 'ביקורות אמיתיות',
@@ -713,6 +816,14 @@ function evm_render_content_page_01( $attributes ) {
 		$content['final_cta']['primary_cta_text'] = $attributes['primary_cta_text'];
 	}
 
+	if ( ! empty( $attributes['heroes_room_url'] ) ) {
+		$content['room_selection']['rooms'][0]['cta_url'] = $attributes['heroes_room_url'];
+	}
+
+	if ( ! empty( $attributes['shadows_room_url'] ) ) {
+		$content['room_selection']['rooms'][1]['cta_url'] = $attributes['shadows_room_url'];
+	}
+
 	$reviews                 = evm_content_page_01_get_reviews( $content['reviews']['items'] );
 	$review_count            = count( $reviews );
 	$placeholder_reviews_on  = ! empty(
@@ -728,9 +839,6 @@ function evm_render_content_page_01( $attributes ) {
 	$hero_has_native_video = ! empty( $content['hero']['hero_video_mp4_url'] ) || ! empty( $content['hero']['hero_video_webm_url'] );
 	$hero_youtube_embed    = $hero_has_native_video ? '' : evm_content_page_01_get_youtube_embed_url( $content['hero']['hero_youtube_url'] );
 	$hero_poster_url       = ! empty( $content['hero']['hero_video_poster_url'] ) ? $content['hero']['hero_video_poster_url'] : $content['hero']['hero_image_url'];
-	$room_has_native_video = ! empty( $content['visual_experience']['villains_room_video_mp4_url'] ) || ! empty( $content['visual_experience']['villains_room_video_webm_url'] );
-	$room_youtube_embed    = $room_has_native_video ? '' : evm_content_page_01_get_youtube_embed_url( $content['visual_experience']['villains_room_youtube_url'] );
-	$room_poster_url       = ! empty( $content['visual_experience']['villains_room_video_poster_url'] ) ? $content['visual_experience']['villains_room_video_poster_url'] : '';
 
 	$content['pain']['eyebrow']     = 'ערב גיבוש שלא שוכחים';
 	$content['pain']['title']       = 'נמאס מעוד ערב רגיל?';
@@ -823,10 +931,45 @@ function evm_render_content_page_01( $attributes ) {
 		);
 	}
 
+	$header_navigation = evm_content_page_01_get_header_navigation_markup();
+
 	ob_start();
 	?>
-	<section class="evm-content-page-01" dir="rtl">
+	<section id="gameit-top" class="evm-content-page-01" dir="rtl">
 		<div class="evm-content-page-01__shell">
+			<header class="evm-gameit-header" aria-label="<?php esc_attr_e( 'ניווט ראשי', 'evm-content-pages' ); ?>">
+				<div class="evm-gameit-header__inner">
+					<a class="evm-gameit-header__brand" href="#gameit-top" aria-label="<?php esc_attr_e( 'Game It - ראש העמוד', 'evm-content-pages' ); ?>">
+						<img class="evm-gameit-header__logo" src="<?php echo esc_url( EVM_CONTENT_PAGES_URL . 'assets/images/gameit-mark.png' ); ?>" alt="" width="412" height="377">
+						<span class="evm-gameit-header__brand-text" dir="ltr">GAME IT</span>
+					</a>
+					<nav class="evm-gameit-header__nav evm-gameit-header__nav--desktop" aria-label="<?php esc_attr_e( 'ניווט ראשי', 'evm-content-pages' ); ?>">
+						<?php echo $header_navigation; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					</nav>
+					<button class="evm-gameit-header__menu-toggle" type="button" aria-expanded="false" aria-controls="evm-gameit-mobile-menu">
+						<span class="screen-reader-text"><?php esc_html_e( 'פתיחת תפריט הניווט', 'evm-content-pages' ); ?></span>
+						<span class="evm-gameit-header__menu-toggle-box" aria-hidden="true">
+							<span class="evm-gameit-header__menu-toggle-line"></span>
+							<span class="evm-gameit-header__menu-toggle-line"></span>
+							<span class="evm-gameit-header__menu-toggle-line"></span>
+						</span>
+					</button>
+					<a class="evm-content-page-01__button evm-content-page-01__button--primary evm-gameit-header__booking" href="<?php echo esc_url( $content['hero']['primary_cta_url'] ); ?>">
+						<span>להזמנה</span>
+						<?php echo evm_content_page_01_icon_html( 'calendar' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					</a>
+				</div>
+				<div class="evm-gameit-header__mobile-panel" id="evm-gameit-mobile-menu" hidden>
+					<nav class="evm-gameit-header__nav evm-gameit-header__nav--mobile" aria-label="<?php esc_attr_e( 'ניווט ראשי', 'evm-content-pages' ); ?>">
+						<?php echo $header_navigation; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					</nav>
+					<a class="evm-content-page-01__button evm-content-page-01__button--primary evm-gameit-header__mobile-booking" href="<?php echo esc_url( $content['hero']['primary_cta_url'] ); ?>">
+						<span>להזמנה</span>
+						<?php echo evm_content_page_01_icon_html( 'calendar' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					</a>
+				</div>
+			</header>
+
 			<section class="evm-content-page-01__hero evm-hero evm-reveal" data-reveal="fade-up">
 				<div class="evm-hero__inner">
 					<div class="evm-hero__grid">
@@ -1013,80 +1156,55 @@ function evm_render_content_page_01( $attributes ) {
 				</div>
 			</section>
 
-			<section class="evm-content-page-01__section evm-content-page-01__section--featured-room">
-				<div class="evm-content-page-01__featured-room-grid">
-					<div class="evm-content-page-01__featured-room-copy evm-reveal" data-reveal="fade-up">
-						<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['visual_experience']['eyebrow'] ); ?></p>
-						<h2 class="evm-content-page-01__section-title evm-content-page-01__featured-room-title"><?php echo esc_html( $content['visual_experience']['title'] ); ?></h2>
-						<p class="evm-content-page-01__featured-room-subtitle"><?php echo esc_html( $content['visual_experience']['subtitle'] ); ?></p>
-
-						<div class="evm-content-page-01__featured-room-body">
-							<?php foreach ( $content['visual_experience']['body'] as $paragraph ) : ?>
-								<p><?php echo esc_html( $paragraph ); ?></p>
-							<?php endforeach; ?>
-						</div>
-
-						<div class="evm-content-page-01__featured-room-actions">
-							<a class="evm-content-page-01__button evm-content-page-01__button--primary" href="<?php echo esc_url( $content['visual_experience']['primary_cta_url'] ); ?>">
-								<?php echo evm_content_page_01_icon_html( 'calendar' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-								<span><?php echo esc_html( $content['visual_experience']['primary_cta_text'] ); ?></span>
-							</a>
-							<a class="evm-content-page-01__button evm-content-page-01__button--ghost" href="<?php echo esc_url( $content['visual_experience']['secondary_cta_url'] ); ?>" target="_blank" rel="noopener">
-								<?php echo evm_content_page_01_icon_html( 'whatsapp' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-								<span><?php echo esc_html( $content['visual_experience']['secondary_cta_text'] ); ?></span>
-							</a>
-						</div>
+			<section id="rooms" class="evm-content-page-01__section evm-content-page-01__section--featured-room">
+				<div class="evm-content-page-01__room-selection">
+					<div class="evm-content-page-01__section-copy evm-content-page-01__room-selection-header evm-reveal" data-reveal="fade-up">
+						<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['room_selection']['eyebrow'] ); ?></p>
+						<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['room_selection']['title'] ); ?></h2>
+						<p class="evm-content-page-01__section-description"><?php echo esc_html( $content['room_selection']['description'] ); ?></p>
 					</div>
 
-					<div class="evm-content-page-01__featured-room-media evm-reveal" data-reveal="fade-up">
-						<div class="evm-content-page-01__room-frame<?php echo ( $room_has_native_video || ! empty( $room_youtube_embed ) ) ? ' evm-content-page-01__room-frame--has-media' : ''; ?>">
-							<span class="evm-content-page-01__room-orbit evm-content-page-01__room-orbit--green" aria-hidden="true"></span>
-							<span class="evm-content-page-01__room-orbit evm-content-page-01__room-orbit--purple" aria-hidden="true"></span>
-							<span class="evm-content-page-01__room-hud evm-content-page-01__room-hud--top" aria-hidden="true"></span>
-							<span class="evm-content-page-01__room-hud evm-content-page-01__room-hud--bottom" aria-hidden="true"></span>
-							<span class="evm-content-page-01__room-red-dot" aria-hidden="true"></span>
-							<div class="evm-content-page-01__room-timer">00:17</div>
+					<div class="evm-content-page-01__room-selection-grid">
+						<?php foreach ( $content['room_selection']['rooms'] as $index => $room ) : ?>
+							<?php $room_modifier = sanitize_html_class( $room['modifier'] ); ?>
+							<article class="evm-content-page-01__room-card evm-content-page-01__room-card--<?php echo esc_attr( $room_modifier ); ?> evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.08 * ( $index + 1 ) ) . 's;' ); ?>">
+								<div class="evm-content-page-01__room-card-media">
+									<?php if ( ! empty( $room['image_url'] ) ) : ?>
+										<img src="<?php echo esc_url( $room['image_url'] ); ?>" alt="<?php echo esc_attr( $room['image_alt'] ); ?>" loading="lazy" decoding="async">
+									<?php else : ?>
+										<div class="evm-content-page-01__room-card-placeholder" aria-hidden="true">
+											<?php echo evm_content_page_01_icon_html( 'swords' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+										</div>
+									<?php endif; ?>
+								</div>
 
-							<div class="evm-content-page-01__room-screen">
-								<?php if ( $room_has_native_video ) : ?>
-									<video class="evm-content-page-01__room-video" autoplay muted loop playsinline <?php echo ! empty( $room_poster_url ) ? 'poster="' . esc_url( $room_poster_url ) . '"' : ''; ?>>
-										<?php if ( ! empty( $content['visual_experience']['villains_room_video_webm_url'] ) ) : ?>
-											<source src="<?php echo esc_url( $content['visual_experience']['villains_room_video_webm_url'] ); ?>" type="video/webm">
-										<?php endif; ?>
-										<?php if ( ! empty( $content['visual_experience']['villains_room_video_mp4_url'] ) ) : ?>
-											<source src="<?php echo esc_url( $content['visual_experience']['villains_room_video_mp4_url'] ); ?>" type="video/mp4">
-										<?php endif; ?>
-									</video>
-								<?php elseif ( ! empty( $room_youtube_embed ) ) : ?>
-									<iframe class="evm-content-page-01__room-youtube" src="<?php echo esc_url( $room_youtube_embed ); ?>" title="<?php echo esc_attr( $content['visual_experience']['media_title'] ); ?>" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-								<?php else : ?>
-									<div class="evm-content-page-01__room-placeholder">
-										<span><?php echo esc_html( $content['visual_experience']['media_eyebrow'] ); ?></span>
-										<strong><?php echo esc_html( $content['visual_experience']['media_title'] ); ?></strong>
-										<em><?php echo esc_html( $content['visual_experience']['media_note'] ); ?></em>
-									</div>
-								<?php endif; ?>
-							</div>
-						</div>
+								<div class="evm-content-page-01__room-card-content">
+									<p class="evm-content-page-01__room-card-label"><?php echo esc_html( $room['label'] ); ?></p>
+									<h3 class="evm-content-page-01__room-card-name"><?php echo esc_html( $room['name'] ); ?></h3>
+									<p class="evm-content-page-01__room-card-headline"><?php echo esc_html( $room['headline'] ); ?></p>
+									<p class="evm-content-page-01__room-card-description"><?php echo esc_html( $room['description'] ); ?></p>
+
+									<ul class="evm-content-page-01__room-card-meta">
+										<?php foreach ( $room['metadata'] as $metadata ) : ?>
+											<li>
+												<span aria-hidden="true"><?php echo evm_content_page_01_icon_html( $metadata['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+												<?php echo esc_html( $metadata['text'] ); ?>
+											</li>
+										<?php endforeach; ?>
+									</ul>
+
+									<a class="evm-content-page-01__button evm-content-page-01__button--primary evm-content-page-01__room-card-cta" href="<?php echo esc_url( $room['cta_url'] ); ?>">
+										<?php echo evm_content_page_01_icon_html( 'calendar' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+										<span><?php echo esc_html( $room['cta_text'] ); ?></span>
+									</a>
+								</div>
+							</article>
+						<?php endforeach; ?>
 					</div>
-				</div>
-
-				<div class="evm-content-page-01__featured-room-cards">
-					<?php foreach ( $content['visual_experience']['feature_cards'] as $index => $card ) : ?>
-						<div class="evm-content-page-01__featured-room-card evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
-							<div class="evm-content-page-01__featured-room-card-icon" aria-hidden="true">
-								<?php echo evm_content_page_01_icon_html( $card['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-							</div>
-							<div class="evm-content-page-01__featured-room-card-copy">
-								<h3><?php echo esc_html( $card['title'] ); ?></h3>
-								<p><?php echo esc_html( $card['text'] ); ?></p>
-							</div>
-						</div>
-					<?php endforeach; ?>
 				</div>
 			</section>
 
-			<section class="evm-content-page-01__section evm-content-page-01__section--experiences">
+			<section id="audiences" class="evm-content-page-01__section evm-content-page-01__section--experiences">
 				<div class="evm-content-page-01__section-copy evm-reveal" data-reveal="fade-up">
 					<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['experiences']['eyebrow'] ); ?></p>
 					<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['experiences']['title'] ); ?></h2>
@@ -1125,7 +1243,7 @@ function evm_render_content_page_01( $attributes ) {
 				</div>
 			</section>
 
-			<section class="evm-content-page-01__section evm-content-page-01__section--reviews">
+			<section id="reviews" class="evm-content-page-01__section evm-content-page-01__section--reviews">
 				<div class="evm-reviews">
 					<div class="evm-reviews__inner">
 						<div class="evm-reviews__header evm-reveal" data-reveal="fade-up">
@@ -1231,7 +1349,7 @@ function evm_render_content_page_01( $attributes ) {
 				</div>
 			</section>
 
-			<section class="evm-content-page-01__section evm-content-page-01__section--faq">
+			<section id="faq" class="evm-content-page-01__section evm-content-page-01__section--faq">
 				<div class="evm-content-page-01__section-copy evm-reveal" data-reveal="fade-up">
 					<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['faq']['eyebrow'] ); ?></p>
 					<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['faq']['title'] ); ?></h2>
@@ -1249,7 +1367,7 @@ function evm_render_content_page_01( $attributes ) {
 				</div>
 			</section>
 
-			<section class="evm-content-page-01__section evm-content-page-01__section--final-cta evm-reveal" data-reveal="fade-up">
+			<section id="booking" class="evm-content-page-01__section evm-content-page-01__section--final-cta evm-reveal" data-reveal="fade-up">
 				<div class="evm-content-page-01__final-cta">
 					<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['final_cta']['eyebrow'] ); ?></p>
 					<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['final_cta']['title'] ); ?></h2>

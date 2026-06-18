@@ -20,6 +20,7 @@
     var revealItems = section.querySelectorAll(".evm-reveal");
     var counters = section.querySelectorAll("[data-count-value]");
 
+    setupGameItHeaderMenu(section);
     setupHeroCountdown(section);
     setupReviewSlider(section);
     setupReviewToggles(section);
@@ -184,6 +185,70 @@
 
     intervalId = window.setInterval(updateCountdown, 1000);
     updateCountdown();
+  }
+
+  function setupGameItHeaderMenu(section) {
+    var header = section.querySelector(".evm-gameit-header");
+    var toggle = header ? header.querySelector(".evm-gameit-header__menu-toggle") : null;
+    var panel = header ? header.querySelector(".evm-gameit-header__mobile-panel") : null;
+
+    if (!header || !toggle || !panel || header.dataset.menuInitialized === "true") {
+      return;
+    }
+
+    var links = panel.querySelectorAll("a");
+
+    function setOpenState(isOpen) {
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      panel.hidden = !isOpen;
+      panel.classList.toggle("is-open", isOpen);
+      header.classList.toggle("is-menu-open", isOpen);
+    }
+
+    function closeMenu() {
+      setOpenState(false);
+    }
+
+    header.dataset.menuInitialized = "true";
+    setOpenState(false);
+
+    toggle.addEventListener("click", function () {
+      setOpenState(toggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!header.classList.contains("is-menu-open")) {
+        return;
+      }
+
+      if (header.contains(event.target)) {
+        return;
+      }
+
+      closeMenu();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && header.classList.contains("is-menu-open")) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+
+    window.addEventListener(
+      "resize",
+      debounce(function () {
+        if (window.innerWidth > 700) {
+          closeMenu();
+        }
+      }, 120)
+    );
   }
 
   function setupReviewToggles(section) {

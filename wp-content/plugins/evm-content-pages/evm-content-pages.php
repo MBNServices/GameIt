@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'EVM_CONTENT_PAGES_VERSION', '0.1.0' );
+define( 'EVM_CONTENT_PAGES_VERSION', '0.2.8' );
 define( 'EVM_CONTENT_PAGES_PATH', plugin_dir_path( __FILE__ ) );
 define( 'EVM_CONTENT_PAGES_URL', plugin_dir_url( __FILE__ ) );
 
@@ -39,6 +39,20 @@ function evm_content_pages_register_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'evm_content_pages_register_assets' );
+
+/**
+ * Registers the navigation menu used by the GameIt landing-page header.
+ *
+ * @return void
+ */
+function evm_content_pages_register_navigation_menus() {
+	register_nav_menus(
+		array(
+			'evm_gameit_primary_navigation' => __( 'GameIt Primary Navigation', 'evm-content-pages' ),
+		)
+	);
+}
+add_action( 'after_setup_theme', 'evm_content_pages_register_navigation_menus' );
 
 /**
  * Checks whether the current singular content contains the shortcode.
@@ -81,6 +95,7 @@ add_action( 'wp_enqueue_scripts', 'evm_content_pages_maybe_enqueue_shortcode_ass
 function evm_content_pages_add_body_class( $classes ) {
 	if ( evm_content_pages_has_shortcode_on_current_page() ) {
 		$classes[] = 'evm-content-page-01-active';
+		$classes[] = 'evm-gameit-landing-page';
 	}
 
 	return $classes;
@@ -102,8 +117,10 @@ function evm_content_page_01_shortcode( $atts ) {
 
 	$attributes = shortcode_atts(
 		array(
-			'primary_cta_url'  => '',
-			'whatsapp_url'     => '',
+			'primary_cta_url'        => '',
+			'whatsapp_url'           => '',
+			'heroes_room_url'        => '',
+			'shadows_room_url'       => '',
 			'hero_image_url'         => '',
 			'hero_video_mp4_url'     => '',
 			'hero_video_webm_url'    => '',
