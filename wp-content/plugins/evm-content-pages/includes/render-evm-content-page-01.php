@@ -80,16 +80,20 @@ function evm_get_content_page_01_defaults() {
 					'detail' => 'שיחקו אצלנו',
 				),
 				array(
-					'icon'   => 'shield',
-					'value'  => 'ממ״ד',
-					'label'  => 'במקום',
-					'detail' => 'לביטחון ושקט נפשי',
+					'icon'       => 'shield',
+					'value'      => 'ממ״ד',
+					'value_type' => 'text',
+					'modifier'   => 'shelter',
+					'label'      => 'במקום',
+					'detail'     => 'לביטחון ושקט נפשי',
 				),
 				array(
-					'icon'   => 'group',
-					'value'  => 'מתאים לכולם',
-					'label'  => 'ילדים, משפחות וצוותים',
-					'detail' => '',
+					'icon'       => 'group',
+					'value'      => 'מתאים לכולם',
+					'value_type' => 'text',
+					'modifier'   => 'all-audiences',
+					'label'      => 'ילדים, משפחות וצוותים',
+					'detail'     => '',
 				),
 			),
 		),
@@ -146,23 +150,27 @@ function evm_get_content_page_01_defaults() {
 			'items'   => array(
 				array(
 					'number'      => '01',
-					'title'       => 'בוחרים חוויה',
-					'description' => 'מתאימים את סוג הפעילות לקבוצה, למטרה ולאווירה שאתם רוצים לייצר.',
+					'icon'        => 'target',
+					'title'       => 'בוחרים את החוויה',
+					'description' => 'מתאימים את הפעילות לקבוצה, למטרה ולאווירה שאתם רוצים ליצור.',
 				),
 				array(
 					'number'      => '02',
-					'title'       => 'מגיעים למתחם',
-					'description' => 'נכנסים ללוקיישן שמייצר אווירה מהרגע הראשון ומכין את כולם לחוויה.',
+					'icon'        => 'location',
+					'title'       => 'מגיעים ונכנסים לאווירה',
+					'description' => 'כבר מהרגע הראשון המתחם מכניס את כולם למצב משחק.',
 				),
 				array(
 					'number'      => '03',
-					'title'       => 'מקבלים תדרוך',
-					'description' => 'הצוות מסביר, ממקד ומעלה את האנרגיה כדי שכל משתתף ירגיש חלק.',
+					'icon'        => 'guide',
+					'title'       => 'מקבלים תדריך קצר',
+					'description' => 'הצוות מסביר, מכוון ומכין את הקבוצה לקראת המשימה.',
 				),
 				array(
 					'number'      => '04',
-					'title'       => 'נכנסים למשימה',
-					'description' => 'משחקים, פותרים, צוחקים ומסיימים עם חוויה קבוצתית שלא דומה לשום ערב רגיל.',
+					'icon'        => 'mission-flag',
+					'title'       => 'המשימה מתחילה',
+					'description' => 'פותרים, משתפים פעולה, צוחקים ומגלים מי באמת מוביל את הקבוצה.',
 				),
 			),
 		),
@@ -174,37 +182,42 @@ function evm_get_content_page_01_defaults() {
 				array(
 					'modifier'    => 'friends',
 					'icon'        => 'group',
+					'tag'         => 'לחברים',
 					'title'       => 'ערב חברים עם אקשן',
 					'description' => 'תחרות, חידות, לחץ זמן והמון צחוק. בדיוק הערב שמוציא את כולם מהשגרה ונותן לכם סיפור לדבר עליו גם למחרת.',
 				),
 				array(
 					'modifier'    => 'family',
 					'icon'        => 'home',
+					'tag'         => 'למשפחות',
 					'title'       => 'חוויה שמחברת את המשפחה',
 					'description' => 'ילדים ומבוגרים נכנסים לאותה משימה, משתפים פעולה, מגלים מי חושב מהר ומי נשאר רגוע כשהשעון מתקתק.',
 				),
 				array(
 					'modifier'    => 'birthday',
 					'icon'        => 'cake',
+					'tag'         => 'לימי הולדת',
 					'title'       => 'יום הולדת שלא נשאר רק בתמונות',
 					'description' => 'חוויה מלאה באקשן, משימות והפתעות שהופכת את החגיגה להרפתקה שכולם משתתפים בה.',
 				),
 				array(
 					'modifier'    => 'team',
 					'icon'        => 'briefcase',
+					'tag'         => 'לצוותים',
 					'title'       => 'גיבוש שמוציא את הצוות מהמסך',
 					'description' => 'משימה קבוצתית שחושפת מנהיגות, חשיבה, תקשורת ושיתוף פעולה, באווירה משוחררת, מצחיקה ותחרותית.',
 				),
 				array(
 					'modifier'    => 'couples',
 					'icon'        => 'heart',
-					'title'       => 'דייט זוגי שלא מרגיש כמו עוד דייט',
-					'description' => 'חוויה מצחיקה, תחרותית ומלאת אדרנלין, שמוציאה אתכם מהשגרה ונותנת לכם משהו אמיתי לעבור יחד.',
-					'supporting_line' => 'מתאים לדייט ראשון, ערב זוגי או הפתעה לא שגרתית',
+					'tag'         => 'לזוגות',
+					'title'       => 'דייט זוגי אחר',
+					'description' => 'לדייט ראשון, ערב זוגי או הפתעה לא שגרתית. חוויה מצחיקה ותחרותית שמוציאה אתכם מהשגרה.',
 				),
 				array(
 					'modifier'    => 'private',
 					'icon'        => 'vip',
+					'tag'         => 'לאירועים פרטיים',
 					'title'       => 'אירוע פרטי במתחם',
 					'description' => 'חוויה פרטית לקבוצה שלכם, עם יותר מרחב, אווירה אישית ואפשרות להתאים את הפעילות לאירוע שאתם מתכננים.',
 				),
@@ -418,6 +431,10 @@ function evm_content_page_01_get_icon( $icon ) {
 		'location'      => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5.13 7 13 7 13s7-7.87 7-13a7 7 0 00-7-7zm0 10a3 3 0 113-3 3 3 0 01-3 3z"/></svg>',
 		'question'      => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 18h2v2h-2zm1-16a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8zm0-14a4 4 0 00-4 4h2a2 2 0 114 0c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 00-4-4z"/></svg>',
 		'arrow'         => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.17 12l-4.59-4.59L10 6l6 6-6 6-1.42-1.41L13.17 12z"/></svg>',
+		'target'        => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v2.06a8.01 8.01 0 016.94 6.94H22v2h-2.06A8.01 8.01 0 0113 19.94V22h-2v-2.06A8.01 8.01 0 014.06 13H2v-2h2.06A8.01 8.01 0 0111 4.06V2zm1 4a6 6 0 100 12 6 6 0 000-12zm0 3a3 3 0 110 6 3 3 0 010-6zm0 2a1 1 0 100 2 1 1 0 000-2z"/></svg>',
+		'guide'         => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2zm0 2v14h10V5H7zm2 3h6v2H9V8zm0 4h6v2H9v-2zm0 4h4v2H9v-2zM4 7H2v10h2V7zm18 0h-2v10h2V7z"/></svg>',
+		'mission-flag'  => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h2v18H5V3zm4 1h9.5l-1.7 4 1.7 4H9V4zm2 2v4h4.5l-.85-2 .85-2H11z"/></svg>',
+		'play'          => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8L19 12 7 4.6zm2 3.58L15.17 12 9 15.82V8.18z"/></svg>',
 	);
 
 	return isset( $icons[ $icon ] ) ? $icons[ $icon ] : '';
@@ -762,29 +779,46 @@ function evm_render_content_page_01( $attributes ) {
 	if ( empty( $content['pain']['hook_cards'] ) || ! is_array( $content['pain']['hook_cards'] ) ) {
 		$content['pain']['hook_cards'] = array(
 			array(
-				'icon'  => 'group',
-				'title' => 'כולם משתתפים',
-				'text'  => 'גם מי שבדרך כלל שקט נכנס לעניינים כשהשעון מתחיל לרוץ.',
+				'number'   => '01',
+				'icon'     => 'group',
+				'title'    => 'כולם נכנסים למשחק',
+				'text'     => 'גם מי שבדרך כלל שקט מוצא את המקום שלו ברגע שהשעון מתחיל לרוץ.',
+				'modifier' => 'green',
 			),
 			array(
-				'icon'  => 'spark',
-				'title' => 'צחוק, לחץ ואדרנלין',
-				'text'  => 'הרגעים הכי טובים קורים כשכולם מנסים להבין מה עושים עכשיו.',
+				'number'   => '02',
+				'icon'     => 'spark',
+				'title'    => 'צחוק, לחץ ואדרנלין',
+				'text'     => 'הרגעים הכי טובים קורים כשכולם מנסים להבין יחד מה עושים עכשיו.',
+				'modifier' => 'purple',
 			),
 			array(
-				'icon'  => 'heart',
-				'title' => 'זיכרון משותף',
-				'text'  => 'זו לא פעילות שרק עוברים, זו חוויה שממשיכה איתכם אחרי שיוצאים.',
+				'number'   => '03',
+				'icon'     => 'target',
+				'title'    => 'כל אחד מוצא תפקיד',
+				'text'     => 'חשיבה, פעולה, מנהיגות או תשומת לב לפרטים. לכל אחד יש דרך להשפיע.',
+				'modifier' => 'cyan',
 			),
 			array(
-				'icon'  => 'star-outline',
-				'title' => 'מתאים לכל גיל',
-				'text'  => 'ילדים, בני נוער, משפחות ומבוגרים יכולים ליהנות יחד מאותה חוויה.',
+				'number'   => '04',
+				'icon'     => 'star-outline',
+				'title'    => 'זיכרון שממשיך איתכם',
+				'text'     => 'זו לא פעילות שעוברים ושוכחים, אלא חוויה שממשיכים לדבר עליה גם אחר כך.',
+				'modifier' => 'green',
 			),
 			array(
-				'icon'  => 'clock',
-				'title' => 'לא עוד ישיבה',
-				'text'  => 'פעילות שמוציאה את הקבוצה מהשגרה ומכניסה אותה למשימה אמיתית.',
+				'number'   => '05',
+				'icon'     => 'group',
+				'title'    => 'מתאים לכל גיל והרכב',
+				'text'     => 'ילדים, בני נוער, זוגות, משפחות וצוותים יכולים ליהנות מאותה חוויה.',
+				'modifier' => 'purple',
+			),
+			array(
+				'number'   => '06',
+				'icon'     => 'play',
+				'title'    => 'לא צריך ניסיון קודם',
+				'text'     => 'מגיעים כמו שאתם, מקבלים הסבר קצר ונכנסים ישר למשימה.',
+				'modifier' => 'cyan',
 			),
 		);
 	}
@@ -826,7 +860,7 @@ function evm_render_content_page_01( $attributes ) {
 									<span class="evm-content-page-01__maze-node evm-content-page-01__maze-node--green"></span>
 									<span class="evm-content-page-01__maze-node evm-content-page-01__maze-node--red"></span>
 								</div>
-								<div class="evm-content-page-01__timer">00:17</div>
+								<div class="evm-content-page-01__timer" data-evm-countdown role="timer" aria-label="<?php esc_attr_e( 'ספירה לאחור לתחילת המשימה', 'evm-content-pages' ); ?>">00:10</div>
 								<div class="evm-content-page-01__media-frame">
 									<div class="evm-content-page-01__media-stage<?php echo $hero_has_native_video || ! empty( $hero_youtube_embed ) ? ' evm-content-page-01__media-stage--has-media' : ''; ?>" aria-label="<?php echo esc_attr( $content['hero']['hero_placeholder']['title'] . ' - ' . $content['hero']['hero_placeholder']['note'] ); ?>" <?php if ( ! empty( $hero_poster_url ) ) : ?>style="background-image:linear-gradient(180deg, rgba(5,11,8,.14), rgba(5,11,8,.66)), url('<?php echo esc_url( $hero_poster_url ); ?>');"<?php endif; ?>>
 										<?php if ( $hero_has_native_video ) : ?>
@@ -863,7 +897,18 @@ function evm_render_content_page_01( $attributes ) {
 				</div>
 				<div class="evm-content-page-01__metrics evm-hero__metrics" aria-label="<?php esc_attr_e( 'נתוני אמון מרכזיים', 'evm-content-pages' ); ?>">
 					<?php foreach ( $content['hero']['metrics'] as $index => $metric ) : ?>
-						<div class="evm-content-page-01__metric evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.08 * ( $index + 1 ) ) . 's;' ); ?>">
+						<?php
+						$metric_classes = array( 'evm-content-page-01__metric', 'evm-reveal' );
+
+						if ( ! empty( $metric['value_type'] ) ) {
+							$metric_classes[] = 'evm-content-page-01__metric--' . sanitize_html_class( (string) $metric['value_type'] ) . '-value';
+						}
+
+						if ( ! empty( $metric['modifier'] ) ) {
+							$metric_classes[] = 'evm-content-page-01__metric--' . sanitize_html_class( (string) $metric['modifier'] );
+						}
+						?>
+						<div class="<?php echo esc_attr( implode( ' ', $metric_classes ) ); ?>" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.08 * ( $index + 1 ) ) . 's;' ); ?>">
 							<div class="evm-content-page-01__metric-content">
 								<div class="evm-content-page-01__metric-value"><?php echo esc_html( $metric['value'] ); ?></div>
 								<div class="evm-content-page-01__metric-label"><?php echo esc_html( $metric['label'] ); ?></div>
@@ -921,33 +966,50 @@ function evm_render_content_page_01( $attributes ) {
 						</div>
 					</div>
 
-					<div class="evm-hook-section__mini-grid">
-						<?php foreach ( $content['pain']['hook_cards'] as $index => $card ) : ?>
-							<article class="evm-hook-section__mini-card evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
-								<div class="evm-hook-section__mini-icon" aria-hidden="true">
-									<?php echo evm_content_page_01_icon_html( ! empty( $card['icon'] ) ? $card['icon'] : 'spark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-								</div>
-								<h3 class="evm-hook-section__mini-title"><?php echo esc_html( $card['title'] ); ?></h3>
-								<p class="evm-hook-section__mini-text"><?php echo esc_html( $card['text'] ); ?></p>
-							</article>
-						<?php endforeach; ?>
+					<div class="evm-hook-benefits">
+						<div class="evm-hook-benefits__grid">
+							<?php foreach ( $content['pain']['hook_cards'] as $index => $card ) : ?>
+								<?php
+								$benefit_classes = array( 'evm-hook-benefit', 'evm-reveal' );
+
+								if ( ! empty( $card['modifier'] ) ) {
+									$benefit_classes[] = 'evm-hook-benefit--' . sanitize_html_class( (string) $card['modifier'] );
+								}
+								?>
+								<article class="<?php echo esc_attr( implode( ' ', $benefit_classes ) ); ?>" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
+									<span class="evm-hook-benefit__number"><?php echo esc_html( ! empty( $card['number'] ) ? $card['number'] : str_pad( (string) ( $index + 1 ), 2, '0', STR_PAD_LEFT ) ); ?></span>
+									<div class="evm-hook-benefit__icon" aria-hidden="true">
+										<?php echo evm_content_page_01_icon_html( ! empty( $card['icon'] ) ? $card['icon'] : 'spark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									</div>
+									<h3 class="evm-hook-benefit__title"><?php echo esc_html( $card['title'] ); ?></h3>
+									<p class="evm-hook-benefit__text"><?php echo esc_html( $card['text'] ); ?></p>
+								</article>
+							<?php endforeach; ?>
+						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="evm-content-page-01__section evm-content-page-01__section--steps">
-				<div class="evm-content-page-01__section-copy evm-reveal" data-reveal="fade-up">
-					<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['steps']['eyebrow'] ); ?></p>
-					<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['steps']['title'] ); ?></h2>
-				</div>
-				<div class="evm-content-page-01__steps-grid">
-					<?php foreach ( $content['steps']['items'] as $index => $step ) : ?>
-						<article class="evm-content-page-01__step-card evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.08 * ( $index + 1 ) ) . 's;' ); ?>">
-							<div class="evm-content-page-01__step-number"><?php echo esc_html( $step['number'] ); ?></div>
-							<h3><?php echo esc_html( $step['title'] ); ?></h3>
-							<p><?php echo esc_html( $step['description'] ); ?></p>
-						</article>
-					<?php endforeach; ?>
+			<section class="evm-content-page-01__section evm-content-page-01__section--steps evm-process">
+				<div class="evm-process__inner">
+					<div class="evm-content-page-01__section-copy evm-process__header evm-reveal" data-reveal="fade-up">
+						<p class="evm-content-page-01__section-eyebrow"><?php echo esc_html( $content['steps']['eyebrow'] ); ?></p>
+						<h2 class="evm-content-page-01__section-title"><?php echo esc_html( $content['steps']['title'] ); ?></h2>
+					</div>
+					<div class="evm-process__timeline evm-reveal" data-reveal="fade-up" style="--evm-delay:0.08s;">
+						<div class="evm-process__line" aria-hidden="true"></div>
+						<?php foreach ( $content['steps']['items'] as $index => $step ) : ?>
+							<article class="evm-process__step evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.14 + ( 0.08 * $index ) ) . 's;' ); ?>">
+								<span class="evm-process__node" aria-hidden="true"></span>
+								<div class="evm-process__number"><?php echo esc_html( $step['number'] ); ?></div>
+								<div class="evm-process__icon" aria-hidden="true">
+									<?php echo evm_content_page_01_icon_html( ! empty( $step['icon'] ) ? $step['icon'] : 'spark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</div>
+								<h3 class="evm-process__title"><?php echo esc_html( $step['title'] ); ?></h3>
+								<p class="evm-process__text"><?php echo esc_html( $step['description'] ); ?></p>
+							</article>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			</section>
 
@@ -1031,13 +1093,30 @@ function evm_render_content_page_01( $attributes ) {
 					<p class="evm-content-page-01__section-description evm-content-page-01__section-description--experiences"><?php echo esc_html( $content['experiences']['description'] ); ?></p>
 				</div>
 				<div class="evm-content-page-01__experience-grid">
+					<?php
+					$experience_tag_labels = array(
+						'friends'  => 'לחברים',
+						'family'   => 'למשפחות',
+						'birthday' => 'לימי הולדת',
+						'team'     => 'לצוותים',
+						'couples'  => 'לזוגות',
+						'private'  => 'לאירועים פרטיים',
+					);
+					?>
 					<?php foreach ( $content['experiences']['items'] as $index => $item ) : ?>
+						<?php
+						$experience_modifier = ! empty( $item['modifier'] ) ? sanitize_html_class( (string) $item['modifier'] ) : '';
+						$experience_tag      = ! empty( $item['tag'] ) ? (string) $item['tag'] : ( $experience_modifier && isset( $experience_tag_labels[ $experience_modifier ] ) ? $experience_tag_labels[ $experience_modifier ] : '' );
+						?>
 						<article class="evm-content-page-01__experience-card<?php echo ! empty( $item['modifier'] ) ? ' evm-content-page-01__experience-card--' . sanitize_html_class( $item['modifier'] ) : ''; ?> evm-reveal" data-reveal="fade-up" style="<?php echo esc_attr( '--evm-delay:' . ( 0.07 * ( $index + 1 ) ) . 's;' ); ?>">
-							<div class="evm-content-page-01__icon evm-content-page-01__icon--large" aria-hidden="true">
+							<?php if ( $experience_tag ) : ?>
+								<span class="evm-content-page-01__experience-tag"><?php echo esc_html( $experience_tag ); ?></span>
+							<?php endif; ?>
+							<div class="evm-content-page-01__icon evm-content-page-01__icon--large evm-content-page-01__experience-icon" aria-hidden="true">
 								<?php echo evm_content_page_01_icon_html( $item['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							</div>
-							<h3><?php echo esc_html( $item['title'] ); ?></h3>
-							<p><?php echo esc_html( $item['description'] ); ?></p>
+							<h3 class="evm-content-page-01__experience-title"><?php echo esc_html( $item['title'] ); ?></h3>
+							<p class="evm-content-page-01__experience-text"><?php echo esc_html( $item['description'] ); ?></p>
 							<?php if ( ! empty( $item['supporting_line'] ) ) : ?>
 								<p class="evm-content-page-01__experience-supporting-line"><?php echo esc_html( $item['supporting_line'] ); ?></p>
 							<?php endif; ?>

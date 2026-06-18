@@ -20,6 +20,7 @@
     var revealItems = section.querySelectorAll(".evm-reveal");
     var counters = section.querySelectorAll("[data-count-value]");
 
+    setupHeroCountdown(section);
     setupReviewSlider(section);
     setupReviewToggles(section);
 
@@ -143,6 +144,46 @@
     }
 
     window.requestAnimationFrame(tick);
+  }
+
+  function setupHeroCountdown(section) {
+    var timer = section.querySelector("[data-evm-countdown]");
+
+    if (!timer || timer.dataset.countdownInitialized === "true") {
+      return;
+    }
+
+    const initialSeconds = 10;
+    const formatCountdown = (seconds) => `00:${String(seconds).padStart(2, "0")}`;
+    var endTime = Date.now() + initialSeconds * 1000;
+    var intervalId = null;
+
+    timer.dataset.countdownInitialized = "true";
+    timer.textContent = formatCountdown(initialSeconds);
+
+    function stopCountdown() {
+      if (!intervalId) {
+        return;
+      }
+
+      window.clearInterval(intervalId);
+      intervalId = null;
+    }
+
+    function updateCountdown() {
+      var remainingSeconds = Math.max(0, Math.ceil((endTime - Date.now()) / 1000));
+
+      timer.textContent = formatCountdown(remainingSeconds);
+
+      if (remainingSeconds > 0) {
+        return;
+      }
+
+      stopCountdown();
+    }
+
+    intervalId = window.setInterval(updateCountdown, 1000);
+    updateCountdown();
   }
 
   function setupReviewToggles(section) {
