@@ -665,198 +665,96 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 }
 
 .evm-content-page-01__visual::before {
-  top: -52px;
-  left: -42px;
-  width: 220px;
-  height: 220px;
+  top: -26px;
+  left: -22px;
+  width: 150px;
+  height: 150px;
   background:
-    radial-gradient(circle, rgba(37, 244, 238, 0.12), transparent 64%),
-    rgba(166, 255, 26, 0.07);
-  animation: evm-hero-glow-drift 7s ease-in-out infinite alternate-reverse;
+    radial-gradient(circle, rgba(37, 244, 238, 0.08), transparent 66%),
+    rgba(166, 255, 26, 0.04);
+  animation: none;
 }
 
 .evm-content-page-01__visual::after {
-  bottom: -66px;
-  right: -48px;
-  width: 250px;
-  height: 250px;
+  bottom: -34px;
+  right: -26px;
+  width: 170px;
+  height: 170px;
   background:
-    radial-gradient(circle, rgba(168, 85, 247, 0.16), transparent 68%),
-    rgba(168, 85, 247, 0.06);
-  animation: evm-hero-glow-drift 8.5s ease-in-out infinite alternate;
+    radial-gradient(circle, rgba(168, 85, 247, 0.11), transparent 68%),
+    rgba(168, 85, 247, 0.03);
+  animation: none;
 }
 
 .evm-content-page-01__visual:hover {
   border-color: rgba(168, 85, 247, 0.32);
   box-shadow:
     inset 0 0 90px rgba(0, 0, 0, 0.42),
-    0 30px 92px rgba(0, 0, 0, 0.38),
-    0 0 120px rgba(138, 47, 255, 0.14);
+    0 28px 72px rgba(0, 0, 0, 0.34),
+    0 0 80px rgba(138, 47, 255, 0.1);
 }
 
 .evm-content-page-01__timer {
   position: absolute;
-  top: 28px;
-  left: 28px;
-  padding: 16px 22px;
-  border-radius: 18px;
-  border: 1px solid rgba(166, 255, 26, 0.42);
+  top: 18px;
+  left: 18px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(166, 255, 26, 0.26);
   background:
-    linear-gradient(180deg, rgba(16, 24, 16, 0.92), rgba(5, 10, 8, 0.9)),
-    rgba(16, 24, 16, 0.88);
+    linear-gradient(180deg, rgba(14, 20, 15, 0.86), rgba(6, 10, 8, 0.82)),
+    rgba(16, 24, 16, 0.72);
   color: var(--evm-accent);
-  font-size: clamp(1.65rem, 2vw, 2.35rem);
+  font-size: clamp(0.96rem, 1.15vw, 1.2rem);
   font-family: var(--evm-font-tech);
   font-weight: 900;
-  letter-spacing: 0.06em;
+  line-height: 1;
+  letter-spacing: 0.08em;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.018),
-    0 0 24px rgba(166, 255, 26, 0.2),
-    0 0 44px rgba(168, 85, 247, 0.1);
-  z-index: 4;
-}
-
-.evm-content-page-01__maze {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.evm-content-page-01__maze-line {
-  position: absolute;
-  border: 1px solid rgba(37, 244, 238, 0.14);
-  border-radius: 999px;
-  box-shadow: 0 0 18px rgba(37, 244, 238, 0.055);
-}
-
-.evm-content-page-01__maze-line--1 {
-  top: 112px;
-  right: 108px;
-  width: 240px;
-  height: 180px;
-  border-left: 0;
-  border-bottom: 0;
-}
-
-.evm-content-page-01__maze-line--2 {
-  bottom: 126px;
-  left: 86px;
-  width: 260px;
-  height: 160px;
-  border-right: 0;
-  border-top: 0;
-}
-
-.evm-content-page-01__maze-line--3 {
-  top: 208px;
-  left: 194px;
-  width: 210px;
-  height: 210px;
-  border-left: 0;
-  border-top: 0;
-}
-
-.evm-content-page-01__maze-node {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.02);
-}
-
-.evm-content-page-01__maze-node--cyan {
-  top: 154px;
-  right: 198px;
-  background: var(--evm-accent-cyan);
-  box-shadow: 0 0 18px rgba(99, 231, 222, 0.35);
-}
-
-.evm-content-page-01__maze-node--green {
-  bottom: 176px;
-  left: 194px;
-  background: var(--evm-accent);
-  box-shadow: 0 0 18px rgba(182, 255, 34, 0.35);
-}
-
-.evm-content-page-01__maze-node--red {
-  top: 94px;
-  left: 146px;
-  width: 8px;
-  height: 8px;
-  background: var(--evm-accent-red);
-  box-shadow: 0 0 14px rgba(251, 74, 84, 0.42);
+    0 8px 24px rgba(0, 0, 0, 0.22);
+  z-index: 5;
 }
 
 .evm-content-page-01__media-frame {
   position: absolute;
-  inset: 92px 44px 80px;
-  padding: 18px;
-  border-radius: 34px;
-  border: 1px solid rgba(168, 85, 247, 0.34);
+  inset: 72px 28px 28px;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid rgba(168, 85, 247, 0.28);
   background:
-    radial-gradient(circle at 24% 4%, rgba(168, 85, 247, 0.17), transparent 30%),
-    radial-gradient(circle at 78% 98%, rgba(37, 244, 238, 0.09), transparent 28%),
-    linear-gradient(180deg, rgba(10, 20, 13, 0.86), rgba(7, 14, 9, 0.96)),
+    radial-gradient(circle at 18% 10%, rgba(168, 85, 247, 0.12), transparent 28%),
+    radial-gradient(circle at 82% 94%, rgba(37, 244, 238, 0.06), transparent 24%),
+    linear-gradient(180deg, rgba(10, 20, 13, 0.78), rgba(7, 14, 9, 0.92)),
     var(--evm-panel);
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.015),
-    0 32px 72px rgba(0, 0, 0, 0.28),
-    0 0 80px rgba(138, 47, 255, 0.2),
-    0 0 42px rgba(37, 244, 238, 0.06);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.012),
+    0 24px 58px rgba(0, 0, 0, 0.24),
+    0 0 46px rgba(138, 47, 255, 0.12),
+    0 0 20px rgba(37, 244, 238, 0.05);
   z-index: 2;
-  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
-}
-
-.evm-content-page-01__media-frame::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(166, 255, 26, 0.1);
-  border-radius: 26px;
-  pointer-events: none;
-  z-index: 4;
-}
-
-.evm-content-page-01__media-frame::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  right: 28px;
-  width: 46%;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(168, 85, 247, 0), rgba(37, 244, 238, 0.88), rgba(168, 85, 247, 0.72), rgba(168, 85, 247, 0));
-  box-shadow:
-    0 0 20px rgba(37, 244, 238, 0.24),
-    0 0 30px rgba(168, 85, 247, 0.16);
-  pointer-events: none;
-  animation: evm-hero-light-sweep 5.5s ease-in-out infinite;
-  z-index: 5;
+  transition: border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .evm-content-page-01__visual:hover .evm-content-page-01__media-frame {
-  border-color: rgba(168, 85, 247, 0.38);
+  border-color: rgba(168, 85, 247, 0.32);
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.015),
-    0 34px 82px rgba(0, 0, 0, 0.34),
-    0 0 92px rgba(138, 47, 255, 0.22);
-  transform: translateY(-2px);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.012),
+    0 26px 64px rgba(0, 0, 0, 0.28),
+    0 0 56px rgba(138, 47, 255, 0.14),
+    0 0 22px rgba(37, 244, 238, 0.06);
 }
 
 .evm-content-page-01__media-stage {
   position: relative;
   height: 100%;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(166, 255, 26, 0.16);
-  background:
-    radial-gradient(circle at 26% 18%, rgba(37, 244, 238, 0.13), transparent 18%),
-    radial-gradient(circle at 72% 72%, rgba(168, 85, 247, 0.14), transparent 20%),
-    radial-gradient(circle at 78% 76%, rgba(166, 255, 26, 0.11), transparent 16%),
-    linear-gradient(160deg, rgba(16, 24, 16, 0.76), rgba(6, 10, 7, 0.98));
+  border: 0;
+  background: linear-gradient(160deg, rgba(16, 24, 16, 0.76), rgba(6, 10, 7, 0.98));
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.34);
+  box-shadow: inset 0 0 42px rgba(0, 0, 0, 0.18);
 }
 
 .evm-content-page-01__hero-video,
@@ -869,6 +767,18 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   object-fit: cover;
   pointer-events: none;
   transform: scale(1.01);
+  z-index: 1;
+}
+
+.evm-content-page-01__hero-static-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.008);
+  filter: saturate(1.03) contrast(1.02) brightness(0.99);
   z-index: 1;
 }
 
@@ -885,31 +795,29 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 
 .evm-content-page-01__media-stage--has-media .evm-content-page-01__media-stage-ambient {
   background:
-    linear-gradient(180deg, rgba(2, 7, 2, 0.22), rgba(2, 7, 2, 0.56)),
-    radial-gradient(circle at 50% 46%, rgba(37, 244, 238, 0.13), transparent 24%),
-    radial-gradient(circle at 34% 64%, rgba(168, 85, 247, 0.2), transparent 22%),
-    radial-gradient(circle at 82% 24%, rgba(166, 255, 26, 0.12), transparent 18%);
+    linear-gradient(180deg, rgba(2, 7, 2, 0.16), rgba(2, 7, 2, 0.42)),
+    radial-gradient(circle at 50% 46%, rgba(37, 244, 238, 0.08), transparent 24%),
+    radial-gradient(circle at 34% 64%, rgba(168, 85, 247, 0.11), transparent 22%);
 }
 
 .evm-content-page-01__media-stage--has-media::before {
   background:
-    linear-gradient(180deg, rgba(4, 7, 5, 0.18), rgba(4, 7, 5, 0.58)),
-    radial-gradient(circle at 50% 48%, rgba(2, 7, 2, 0.32), transparent 34%),
-    linear-gradient(105deg, transparent 0 40%, rgba(168, 85, 247, 0.13) 47%, rgba(37, 244, 238, 0.1) 52%, transparent 60%),
-    repeating-linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.028) 0,
-      rgba(255, 255, 255, 0.028) 1px,
-      transparent 1px,
-      transparent 6px
-    );
+    linear-gradient(180deg, rgba(4, 7, 5, 0.1), rgba(4, 7, 5, 0.34)),
+    radial-gradient(circle at 50% 48%, rgba(2, 7, 2, 0.16), transparent 32%);
 }
 
 .evm-content-page-01__media-stage--has-media::after {
+  background: linear-gradient(180deg, rgba(2, 7, 2, 0.28) 0%, rgba(2, 7, 2, 0.06) 32%, transparent 58%, rgba(2, 7, 2, 0.34) 100%);
+}
+
+.evm-content-page-01__media-stage--has-static-image::before {
   background:
-    radial-gradient(circle at 50% 50%, rgba(2, 7, 2, 0.88) 0 82px, rgba(2, 7, 2, 0.38) 118px, transparent 156px),
-    linear-gradient(180deg, rgba(2, 7, 2, 0.72) 0%, rgba(2, 7, 2, 0.28) 30%, transparent 52%, rgba(2, 7, 2, 0.78) 100%);
-  border-color: rgba(34, 211, 238, 0.11);
+    linear-gradient(180deg, rgba(7, 10, 8, 0.08), rgba(7, 10, 8, 0.2)),
+    linear-gradient(0deg, rgba(7, 10, 8, 0.18), rgba(7, 10, 8, 0.08));
+}
+
+.evm-content-page-01__media-stage--has-static-image::after {
+  display: none;
 }
 
 .evm-content-page-01__media-stage::before,
@@ -921,29 +829,12 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 
 .evm-content-page-01__media-stage::before {
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(4, 7, 5, 0.04), rgba(4, 7, 5, 0.42)),
-    linear-gradient(105deg, transparent 0 40%, rgba(168, 85, 247, 0.1) 47%, rgba(37, 244, 238, 0.09) 52%, transparent 60%),
-    repeating-linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.022) 0,
-      rgba(255, 255, 255, 0.022) 1px,
-      transparent 1px,
-      transparent 6px
-    );
-  animation: evm-hero-scanline 9s linear infinite;
+  background: linear-gradient(180deg, rgba(4, 7, 5, 0.04), rgba(4, 7, 5, 0.2));
   z-index: 2;
 }
 
 .evm-content-page-01__media-stage::after {
-  inset: 7% 8%;
-  border-radius: 28px;
-  border: 1px solid rgba(37, 244, 238, 0.1);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.01),
-    0 0 120px rgba(37, 244, 238, 0.05),
-    0 0 76px rgba(168, 85, 247, 0.045);
-  z-index: 3;
+  display: none;
 }
 
 .evm-content-page-01__media-stage-ambient {
@@ -959,71 +850,6 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
     radial-gradient(circle at 34% 64%, rgba(168, 85, 247, 0.08), transparent 18%);
   z-index: 4;
   animation: evm-hero-particles 7s ease-in-out infinite alternate;
-}
-
-.evm-content-page-01__media-stage-core {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  z-index: 5;
-}
-
-.evm-content-page-01__media-stage-core::before {
-  content: "";
-  position: absolute;
-  inset: 16% 13% 18%;
-  border-radius: 30px;
-  background:
-    radial-gradient(circle at 50% 40%, rgba(99, 231, 222, 0.16), transparent 18%),
-    radial-gradient(circle at 78% 78%, rgba(168, 85, 247, 0.18), transparent 18%),
-    linear-gradient(135deg, rgba(9, 16, 12, 0.2), rgba(9, 16, 12, 0.72)),
-    linear-gradient(180deg, rgba(5, 10, 8, 0.12), rgba(5, 10, 8, 0.7));
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow:
-    inset 0 0 0 1px rgba(99, 231, 222, 0.08),
-    inset 0 -40px 80px rgba(0, 0, 0, 0.22),
-    0 24px 60px rgba(0, 0, 0, 0.24);
-  transform: perspective(1200px) rotateX(8deg);
-}
-
-.evm-content-page-01__media-stage-core::after {
-  content: "";
-  position: absolute;
-  inset: auto 18% 11%;
-  height: 28%;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(182, 255, 34, 0.18), rgba(99, 231, 222, 0.02) 68%, transparent 74%);
-  filter: blur(10px);
-}
-
-.evm-content-page-01__media-stage-play {
-  position: relative;
-  z-index: 2;
-  width: 118px;
-  height: 118px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 35% 35%, rgba(99, 231, 222, 0.2), transparent 44%),
-    radial-gradient(circle at 74% 72%, rgba(168, 85, 247, 0.14), transparent 40%),
-    linear-gradient(180deg, rgba(7, 13, 10, 0.82), rgba(6, 10, 8, 0.96));
-  border: 1px solid rgba(99, 231, 222, 0.24);
-  box-shadow:
-    0 0 0 18px rgba(99, 231, 222, 0.03),
-    0 0 52px rgba(99, 231, 222, 0.14),
-    0 18px 44px rgba(0, 0, 0, 0.3);
-}
-
-.evm-content-page-01__media-stage-play span {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 26px solid var(--evm-text);
-  margin-inline-start: 8px;
 }
 
 .evm-content-page-01__media-ring,
@@ -1072,49 +898,6 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   border-right: 0;
   border-top: 0;
   border-radius: 0 0 0 26px;
-}
-
-.evm-content-page-01__badge {
-  position: absolute;
-  left: 34px;
-  right: auto;
-  bottom: 34px;
-  width: auto;
-  max-width: min(100% - 68px, 280px);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(166, 255, 26, 0.2);
-  background:
-    radial-gradient(circle at 8% 0%, rgba(168, 85, 247, 0.12), transparent 40%),
-    linear-gradient(180deg, rgba(14, 22, 14, 0.88), rgba(7, 11, 7, 0.96)),
-    rgba(8, 12, 8, 0.92);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.015),
-    0 18px 40px rgba(0, 0, 0, 0.24),
-    0 0 34px rgba(168, 85, 247, 0.08);
-  z-index: 4;
-}
-
-.evm-content-page-01__badge::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  flex: 0 0 8px;
-  border-radius: 999px;
-  background: var(--evm-accent-red);
-  box-shadow: 0 0 12px rgba(251, 74, 84, 0.5);
-}
-
-.evm-content-page-01__badge-label {
-  color: var(--evm-accent);
-  font-size: clamp(0.96rem, 1.3vw, 1.08rem);
-  font-family: var(--evm-font-body);
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
 }
 
 .evm-content-page-01__metrics,
@@ -3754,6 +3537,10 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   align-items: stretch;
 }
 
+.evm-content-page-01 .evm-reviews__trust-grid--temporarily-hidden {
+  display: none;
+}
+
 .evm-content-page-01 .evm-reviews__trust-card {
   display: grid;
   justify-items: center;
@@ -3960,13 +3747,7 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   }
 
   .evm-content-page-01__media-frame {
-    inset: 86px 32px 72px;
-  }
-
-  .evm-content-page-01__badge {
-    left: 24px;
-    bottom: 24px;
-    max-width: min(100% - 48px, 260px);
+    inset: 72px 26px 26px;
   }
 
   .evm-content-page-01__steps-grid {
@@ -4065,8 +3846,40 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   }
 
   .evm-content-page-01__copy {
+    display: contents;
+  }
+
+  .evm-content-page-01__eyebrow {
+    order: 1;
+  }
+
+  .evm-content-page-01__headline {
+    order: 2;
     justify-items: stretch;
     text-align: right;
+  }
+
+  .evm-content-page-01__subheadline {
+    order: 4;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .evm-content-page-01__actions {
+    order: 5;
+  }
+
+  .evm-content-page-01__trust-note {
+    order: 6;
+  }
+
+  .evm-content-page-01__media {
+    order: 3;
+  }
+
+  .evm-content-page-01__metrics,
+  .evm-hero__metrics {
+    order: 7;
   }
 
   .evm-content-page-01__headline {
@@ -4074,11 +3887,6 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
     max-width: 100%;
     letter-spacing: -0.025em;
     overflow-wrap: break-word;
-  }
-
-  .evm-content-page-01__subheadline {
-    width: 100%;
-    max-width: 100%;
   }
 
   .evm-content-page-01__metrics,
@@ -4089,6 +3897,11 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   .evm-content-page-01__stats,
   .evm-content-page-01 .evm-hook-benefits__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .evm-content-page-01__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 
   .evm-content-page-01 .evm-hook-section__inner {
@@ -4164,16 +3977,12 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
     flex: 1 1 240px;
   }
 
-  .evm-content-page-01__badge-label {
-    font-size: 1rem;
-  }
-
   .evm-content-page-01__visual {
-    min-height: 520px;
+    min-height: 430px;
   }
 
   .evm-content-page-01__media-frame {
-    inset: 82px 24px 78px;
+    inset: 64px 20px 20px;
   }
 
   .evm-content-page-01 .evm-review-card {
@@ -4359,7 +4168,6 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   }
 
   .evm-content-page-01__steps-grid,
-  .evm-content-page-01__metrics,
   .evm-content-page-01__selector-grid,
   .evm-content-page-01__featured-room-cards,
   .evm-content-page-01__experience-grid,
@@ -4373,48 +4181,72 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
     grid-template-columns: 1fr;
   }
 
+  .evm-content-page-01__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .evm-content-page-01__metric {
+    grid-template-columns: minmax(0, 1fr) 38px;
+    gap: 12px;
+    min-height: 118px;
+    padding: 18px 16px;
+    border-radius: 22px;
+  }
+
+  .evm-content-page-01__metric-content {
+    gap: 3px;
+  }
+
+  .evm-content-page-01__icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+
+  .evm-content-page-01__metric-value {
+    font-size: clamp(1.35rem, 5vw, 1.85rem);
+    line-height: 1.02;
+  }
+
+  .evm-content-page-01 .evm-content-page-01__metric--shelter .evm-content-page-01__metric-value {
+    font-size: clamp(1.2rem, 4.6vw, 1.55rem);
+  }
+
+  .evm-content-page-01 .evm-content-page-01__metric--all-audiences .evm-content-page-01__metric-value {
+    font-size: clamp(0.92rem, 3.6vw, 1.1rem);
+    max-width: 6.8ch;
+  }
+
+  .evm-content-page-01__metric-label {
+    font-size: 0.92rem;
+    line-height: 1.3;
+  }
+
+  .evm-content-page-01__metric-detail {
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+
   .evm-content-page-01__visual {
-    min-height: 420px;
-    border-radius: 28px;
+    min-height: 310px;
+    border-radius: 24px;
   }
 
   .evm-content-page-01__media-frame {
-    inset: 72px 14px 72px;
-    padding: 12px;
+    inset: 10px;
+    padding: 8px;
   }
 
   .evm-content-page-01__timer {
-    top: 16px;
-    left: 16px;
-    padding: 10px 14px;
-    font-size: 1.55rem;
-  }
-
-  .evm-content-page-01__badge {
-    left: 16px;
-    right: auto;
-    bottom: 16px;
-    max-width: min(100% - 32px, 230px);
-    padding: 12px 15px;
-  }
-
-  .evm-content-page-01__badge-label {
-    font-size: 0.9rem;
+    top: 12px;
+    left: 12px;
+    padding: 7px 10px;
+    font-size: 0.88rem;
   }
 
   .evm-content-page-01__media-stage {
     min-height: 100%;
-  }
-
-  .evm-content-page-01__media-stage-play {
-    width: 92px;
-    height: 92px;
-  }
-
-  .evm-content-page-01__media-stage-play span {
-    border-top-width: 12px;
-    border-bottom-width: 12px;
-    border-left-width: 20px;
   }
 
   .evm-content-page-01 .evm-hook-section__title {
@@ -4569,6 +4401,88 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 
   .evm-content-page-01__section--final-cta {
     padding-bottom: 28px;
+  }
+}
+
+@media (max-width: 430px) {
+  .evm-content-page-01__metrics {
+    gap: 12px;
+  }
+
+  .evm-content-page-01__metric {
+    min-height: 110px;
+    padding: 16px 14px;
+  }
+
+  .evm-content-page-01__metric-value {
+    font-size: clamp(1.2rem, 5.2vw, 1.58rem);
+  }
+
+  .evm-content-page-01__metric-label {
+    font-size: 0.88rem;
+  }
+
+  .evm-content-page-01__metric-detail {
+    font-size: 0.8rem;
+  }
+
+  .evm-content-page-01__visual {
+    min-height: 290px;
+  }
+
+  .evm-content-page-01__media-frame {
+    inset: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .evm-content-page-01__metrics {
+    gap: 10px;
+  }
+
+  .evm-content-page-01__metric {
+    grid-template-columns: minmax(0, 1fr) 34px;
+    gap: 10px;
+    min-height: 104px;
+    padding: 15px 13px;
+  }
+
+  .evm-content-page-01__icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .evm-content-page-01__metric-value {
+    font-size: clamp(1.08rem, 4.9vw, 1.42rem);
+  }
+
+  .evm-content-page-01 .evm-content-page-01__metric--shelter .evm-content-page-01__metric-value {
+    font-size: clamp(1.05rem, 4.4vw, 1.3rem);
+  }
+
+  .evm-content-page-01 .evm-content-page-01__metric--all-audiences .evm-content-page-01__metric-value {
+    font-size: clamp(0.84rem, 3.3vw, 1rem);
+    max-width: 6.4ch;
+  }
+
+  .evm-content-page-01__metric-label {
+    font-size: 0.84rem;
+  }
+
+  .evm-content-page-01__metric-detail {
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  .evm-content-page-01__visual {
+    min-height: 274px;
+  }
+
+  .evm-content-page-01__timer {
+    top: 10px;
+    left: 10px;
+    padding: 6px 9px;
+    font-size: 0.82rem;
   }
 }
 

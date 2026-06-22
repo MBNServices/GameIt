@@ -1,0 +1,380 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - main [ref=e3]:
+    - generic [ref=e6]:
+      - generic "ניווט ראשי" [ref=e7]:
+        - generic [ref=e8]:
+          - link "Game It - ראש העמוד" [ref=e9] [cursor=pointer]:
+            - /url: "#gameit-top"
+            - generic [ref=e10]: GAME IT
+          - navigation "ניווט ראשי" [ref=e11]:
+            - list [ref=e12]:
+              - listitem [ref=e13]:
+                - link "החדרים" [ref=e14] [cursor=pointer]:
+                  - /url: "#rooms"
+              - listitem [ref=e15]:
+                - link "למי זה מתאים" [ref=e16] [cursor=pointer]:
+                  - /url: "#audiences"
+              - listitem [ref=e17]:
+                - link "ביקורות" [ref=e18] [cursor=pointer]:
+                  - /url: "#reviews"
+              - listitem [ref=e19]:
+                - link "שאלות נפוצות" [ref=e20] [cursor=pointer]:
+                  - /url: "#faq"
+          - link "להזמנה" [ref=e21] [cursor=pointer]:
+            - /url: "#booking"
+            - generic [ref=e22]: להזמנה
+            - img [ref=e23]
+      - generic [ref=e25]:
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - paragraph [ref=e29]: מתחם חדרי בריחה עם הדירוג הכי גבוה במדינה
+            - heading "GAME IT - נכנסים למשימה. יוצאים עם חוויה." [level=1] [ref=e30]:
+              - generic [ref=e31]: GAME IT -
+              - generic [ref=e32]: נכנסים למשימה.
+              - emphasis [ref=e33]: יוצאים עם חוויה.
+            - paragraph [ref=e34]: לא חייבים להיות קבוצה ענקית כדי להיכנס להרפתקה. גם זוג, שלושה חברים, משפחה או יום הולדת יכולים להפוך לצוות מנצח, עם חידות, צחוק וטיימר שמעלה את הדופק.
+            - generic [ref=e35]:
+              - link "בחרו משימה והזמינו עכשיו" [ref=e36] [cursor=pointer]:
+                - /url: "#booking"
+                - generic [ref=e37]: בחרו משימה והזמינו עכשיו
+                - img [ref=e38]
+              - link "עזרו לי לבחור משימה" [ref=e40] [cursor=pointer]:
+                - /url: https://wa.me/972500000000
+                - generic [ref=e41]: עזרו לי לבחור משימה
+                - img [ref=e42]
+            - paragraph [ref=e44]: אקשן • צחוק • שיתוף פעולה • זמן שמתקתק
+          - generic [ref=e47]:
+            - timer "ספירה לאחור לתחילת המשימה" [ref=e48]: 00:10
+            - generic "מסך חוויה מרכזי - מוכן לוידאו, אנימציה או לוטי בהמשך." [ref=e49]:
+              - img "משפחות וחברים בחוויית חדר בריחה של Game It" [ref=e50]
+        - generic "נתוני אמון מרכזיים" [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]: "5.0"
+              - generic [ref=e55]: ציון מושלם
+              - generic [ref=e56]: מביקורות בגוגל
+            - img [ref=e58]
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - generic [ref=e62]: 2,000+
+              - generic [ref=e63]: קבוצות מרוצות
+              - generic [ref=e64]: שיחקו אצלנו
+            - img [ref=e66]
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - generic [ref=e70]: ממ״ד
+              - generic [ref=e71]: במקום
+              - generic [ref=e72]: לביטחון ושקט נפשי
+            - img [ref=e74]
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: מתאים לכולם
+              - generic [ref=e79]: ילדים, משפחות וצוותים
+            - img [ref=e81]
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - paragraph [ref=e86]: בחרו את המשימה שלכם
+          - heading "שני חדרים. שתי חוויות. איזו משימה מחכה לכם?" [level=2] [ref=e87]
+          - paragraph [ref=e88]: בחרו את החדר שמתאים לקבוצה שלכם והתחילו את החוויה.
+        - generic [ref=e89]:
+          - article [ref=e90]:
+            - img "חדר בריחה גיבורים נגד נבלים ב-GAME IT" [ref=e92]
+            - generic [ref=e93]:
+              - paragraph [ref=e94]: חדר הדגל שלנו
+              - heading "גיבורים נגד נבלים" [level=3] [ref=e95]
+              - paragraph [ref=e96]: העולם מחכה להכרעה
+              - paragraph [ref=e97]: שתי קבוצות נכנסות למשימה אחת, כל צד מנסה להשפיע על מהלך המשחק ולהפוך את הקרב ברגע.
+              - list [ref=e98]:
+                - listitem [ref=e99]:
+                  - img [ref=e101]
+                  - text: 2 קבוצות במקביל
+                - listitem [ref=e103]:
+                  - img [ref=e105]
+                  - text: קיר משותף, משימות והפתעות
+                - listitem [ref=e107]:
+                  - img [ref=e109]
+                  - text: מתאים למשפחות, חברים וקבוצות
+              - link "לפרטים והזמנה" [ref=e111] [cursor=pointer]:
+                - /url: "#booking"
+                - img [ref=e112]
+                - generic [ref=e114]: לפרטים והזמנה
+          - article [ref=e115]:
+            - img "חדר בריחה ספר הצללים ב-GAME IT" [ref=e117]
+            - generic [ref=e118]:
+              - paragraph [ref=e119]: חדר פנטזיה מסתורי
+              - heading "ספר הצללים" [level=3] [ref=e120]
+              - paragraph [ref=e121]: השער לעולם הרוחות נפתח
+              - paragraph [ref=e122]: ספר עתיק שמר במשך אלפי שנים על השער לעולם הרוחות, עד שטעות גורלית שחררה את כוחות האופל. היכנסו לעולם קסום ומסתורי, פתרו את הסודות והחזירו את האור לפני שיהיה מאוחר מדי.
+              - list [ref=e123]:
+                - listitem [ref=e124]:
+                  - img [ref=e126]
+                  - text: משפחות, חברים וגיבושי צוותים
+                - listitem [ref=e128]:
+                  - img [ref=e130]
+                  - text: עד 8-10 משתתפים
+                - listitem [ref=e132]:
+                  - img [ref=e134]
+                  - text: מומלץ מגיל 10
+              - link "לפרטים והזמנה" [ref=e136] [cursor=pointer]:
+                - /url: https://gameit.co.il/%D7%A1%D7%A4%D7%A8-%D7%94%D7%A6%D7%9C%D7%9C%D7%99%D7%9D-%D7%97%D7%93%D7%A8-%D7%91%D7%A8%D7%99%D7%97%D7%94/
+                - img [ref=e137]
+                - generic [ref=e139]: לפרטים והזמנה
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - paragraph [ref=e144]: ביקורות אמיתיות
+          - heading "מה מספרים מי שכבר נכנסו למשימה?" [level=2] [ref=e145]
+          - paragraph [ref=e146]: משפחות, חברים, זוגות וצוותים כבר שיחקו אצלנו. הנה כמה מהחוויות שהם בחרו לשתף.
+        - generic [ref=e147]:
+          - generic "סליידר ביקורות" [ref=e149]:
+            - article [ref=e150]:
+              - generic [ref=e152]:
+                - generic "אווטאר חלופי עבור מבקר לדוגמה 1" [ref=e154]: מ
+                - generic [ref=e155]:
+                  - strong [ref=e156]: מבקר לדוגמה 1
+                  - generic [ref=e157]: לפני חודש
+              - generic "5 מתוך 5" [ref=e158]:
+                - generic [ref=e159]:
+                  - img [ref=e161]
+                  - img [ref=e164]
+                  - img [ref=e167]
+                  - img [ref=e170]
+                  - img [ref=e173]
+                - generic [ref=e175]: 5 מתוך 5
+              - paragraph [ref=e177]: ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.
+              - generic [ref=e179]: Google
+            - article [ref=e180]:
+              - generic [ref=e182]:
+                - generic "אווטאר חלופי עבור מבקר לדוגמה 2" [ref=e184]: מ
+                - generic [ref=e185]:
+                  - strong [ref=e186]: מבקר לדוגמה 2
+                  - generic [ref=e187]: לפני חודשיים
+              - generic "5 מתוך 5" [ref=e188]:
+                - generic [ref=e189]:
+                  - img [ref=e191]
+                  - img [ref=e194]
+                  - img [ref=e197]
+                  - img [ref=e200]
+                  - img [ref=e203]
+                - generic [ref=e205]: 5 מתוך 5
+              - paragraph [ref=e207]: ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.
+              - generic [ref=e209]: Google
+            - article [ref=e210]:
+              - generic [ref=e212]:
+                - generic "אווטאר חלופי עבור מבקר לדוגמה 3" [ref=e214]: מ
+                - generic [ref=e215]:
+                  - strong [ref=e216]: מבקר לדוגמה 3
+                  - generic [ref=e217]: לפני שלושה חודשים
+              - generic "5 מתוך 5" [ref=e218]:
+                - generic [ref=e219]:
+                  - img [ref=e221]
+                  - img [ref=e224]
+                  - img [ref=e227]
+                  - img [ref=e230]
+                  - img [ref=e233]
+                - generic [ref=e235]: 5 מתוך 5
+              - paragraph [ref=e237]: ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.
+              - generic [ref=e239]: Google
+            - article [ref=e240]:
+              - generic [ref=e242]:
+                - generic "אווטאר חלופי עבור מבקר לדוגמה 4" [ref=e244]: מ
+                - generic [ref=e245]:
+                  - strong [ref=e246]: מבקר לדוגמה 4
+                  - generic [ref=e247]: לפני ארבעה חודשים
+              - generic "5 מתוך 5" [ref=e248]:
+                - generic [ref=e249]:
+                  - img [ref=e251]
+                  - img [ref=e254]
+                  - img [ref=e257]
+                  - img [ref=e260]
+                  - img [ref=e263]
+                - generic [ref=e265]: 5 מתוך 5
+              - paragraph [ref=e267]: ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.
+              - generic [ref=e269]: Google
+            - article [ref=e270]:
+              - generic [ref=e272]:
+                - generic "אווטאר חלופי עבור מבקר לדוגמה 5" [ref=e274]: מ
+                - generic [ref=e275]:
+                  - strong [ref=e276]: מבקר לדוגמה 5
+                  - generic [ref=e277]: לפני חמישה חודשים
+              - generic "5 מתוך 5" [ref=e278]:
+                - generic [ref=e279]:
+                  - img [ref=e281]
+                  - img [ref=e284]
+                  - img [ref=e287]
+                  - img [ref=e290]
+                  - img [ref=e293]
+                - generic [ref=e295]: 5 מתוך 5
+              - paragraph [ref=e297]: ביקורת לדוגמה להחלפה לאחר חיבור Google Business Profile API.
+              - generic [ref=e299]: Google
+          - generic [ref=e300]:
+            - button "הביקורת הבאה" [ref=e301] [cursor=pointer]:
+              - img [ref=e302]
+            - button "הביקורת הקודמת" [disabled] [ref=e304]:
+              - img [ref=e305]
+          - generic "ניווט ביקורות" [ref=e307]:
+            - button "מעבר לביקורת 1" [pressed] [ref=e308] [cursor=pointer]
+            - button "מעבר לביקורת 2" [ref=e309] [cursor=pointer]
+            - button "מעבר לביקורת 3" [ref=e310] [cursor=pointer]
+            - button "מעבר לביקורת 4" [ref=e311] [cursor=pointer]
+            - button "מעבר לביקורת 5" [ref=e312] [cursor=pointer]
+      - generic [ref=e314]:
+        - generic [ref=e315]:
+          - paragraph [ref=e316]: פשוט, מהיר ומדויק
+          - heading "איך זה עובד" [level=2] [ref=e317]
+        - generic [ref=e318]:
+          - article [ref=e319]:
+            - generic [ref=e321]: "01"
+            - img [ref=e323]
+            - heading "בוחרים את החוויה" [level=3] [ref=e325]
+            - paragraph [ref=e326]: מתאימים את הפעילות לקבוצה, למטרה ולאווירה שאתם רוצים ליצור.
+          - article [ref=e327]:
+            - generic [ref=e329]: "02"
+            - img [ref=e331]
+            - heading "מגיעים ונכנסים לאווירה" [level=3] [ref=e333]
+            - paragraph [ref=e334]: כבר מהרגע הראשון המתחם מכניס את כולם למצב משחק.
+          - article [ref=e335]:
+            - generic [ref=e337]: "03"
+            - img [ref=e339]
+            - heading "מקבלים תדריך קצר" [level=3] [ref=e341]
+            - paragraph [ref=e342]: הצוות מסביר, מכוון ומכין את הקבוצה לקראת המשימה.
+          - article [ref=e343]:
+            - generic [ref=e344]: "04"
+            - img [ref=e346]
+            - heading "המשימה מתחילה" [level=3] [ref=e348]
+            - paragraph [ref=e349]: פותרים, משתפים פעולה, צוחקים ומגלים מי באמת מוביל את הקבוצה.
+      - generic [ref=e351]:
+        - generic [ref=e352]:
+          - paragraph [ref=e353]: ערב גיבוש שלא שוכחים
+          - heading "נמאס מעוד ערב רגיל?" [level=2] [ref=e354]
+          - paragraph [ref=e355]: מסעדה, סרט או עוד ישיבה בבית כבר לא תמיד מרגשים. ב־GameIt הקבוצה נכנסת יחד למשימה, צוחקת, נלחצת, משתפת פעולה ויוצאת עם חוויה שממשיכים לדבר עליה גם אחרי שהמשחק נגמר.
+          - paragraph [ref=e356]: פעילות שמזיזה את כולם מהכיסא ויוצרת רגעים שאי אפשר לקבל בעוד ערב רגיל.
+        - generic [ref=e359]:
+          - article [ref=e360]:
+            - generic [ref=e361]:
+              - generic [ref=e362]: שגרה מוכרת
+              - heading "עוד ערב רגיל" [level=3] [ref=e363]
+            - list [ref=e364]:
+              - listitem [ref=e365]: יושבים
+              - listitem [ref=e366]: מדברים קצת
+              - listitem [ref=e367]: מסתכלים בטלפון
+              - listitem [ref=e368]: חוזרים הביתה
+          - generic [ref=e370]: או
+          - article [ref=e371]:
+            - generic [ref=e372]:
+              - generic [ref=e373]: האקשן מתחיל
+              - heading "חוויה ב־GameIt" [level=3] [ref=e374]
+            - list [ref=e375]:
+              - listitem [ref=e376]: נכנסים למשימה
+              - listitem [ref=e377]: פותרים חידות
+              - listitem [ref=e378]: צוחקים בלחץ
+              - listitem [ref=e379]: משתפים פעולה
+              - listitem [ref=e380]: יוצאים עם סיפור
+        - generic [ref=e382]:
+          - article [ref=e383]:
+            - generic [ref=e384]: "01"
+            - img [ref=e386]
+            - heading "כולם נכנסים למשחק" [level=3] [ref=e388]
+            - paragraph [ref=e389]: גם מי שבדרך כלל שקט מוצא את המקום שלו ברגע שהשעון מתחיל לרוץ.
+          - article [ref=e390]:
+            - generic [ref=e391]: "02"
+            - img [ref=e393]
+            - heading "צחוק, לחץ ואדרנלין" [level=3] [ref=e395]
+            - paragraph [ref=e396]: הרגעים הכי טובים קורים כשכולם מנסים להבין יחד מה עושים עכשיו.
+          - article [ref=e397]:
+            - generic [ref=e398]: "03"
+            - img [ref=e400]
+            - heading "כל אחד מוצא תפקיד" [level=3] [ref=e402]
+            - paragraph [ref=e403]: חשיבה, פעולה, מנהיגות או תשומת לב לפרטים. לכל אחד יש דרך להשפיע.
+          - article [ref=e404]:
+            - generic [ref=e405]: "04"
+            - img [ref=e407]
+            - heading "זיכרון שממשיך איתכם" [level=3] [ref=e409]
+            - paragraph [ref=e410]: זו לא פעילות שעוברים ושוכחים, אלא חוויה שממשיכים לדבר עליה גם אחר כך.
+          - article [ref=e411]:
+            - generic [ref=e412]: "05"
+            - img [ref=e414]
+            - heading "מתאים לכל גיל והרכב" [level=3] [ref=e416]
+            - paragraph [ref=e417]: ילדים, בני נוער, זוגות, משפחות וצוותים יכולים ליהנות מאותה חוויה.
+          - article [ref=e418]:
+            - generic [ref=e419]: "06"
+            - img [ref=e421]
+            - heading "לא צריך ניסיון קודם" [level=3] [ref=e423]
+            - paragraph [ref=e424]: מגיעים כמו שאתם, מקבלים הסבר קצר ונכנסים ישר למשימה.
+      - generic [ref=e425]:
+        - generic [ref=e426]:
+          - paragraph [ref=e427]: התאמה לכל קבוצה
+          - heading "לכל קבוצה יש את המשימה שלה" [level=2] [ref=e428]
+          - paragraph [ref=e429]: מחפשים ערב חברים, יום הולדת, דייט או גיבוש לצוות? החוויה מתאימה את עצמה לאנשים שמגיעים איתכם.
+        - generic [ref=e430]:
+          - article [ref=e431]:
+            - generic [ref=e432]: לחברים
+            - img [ref=e434]
+            - heading "ערב חברים עם אקשן" [level=3] [ref=e436]
+            - paragraph [ref=e437]: תחרות, חידות, לחץ זמן והמון צחוק. בדיוק הערב שמוציא את כולם מהשגרה ונותן לכם סיפור לדבר עליו גם למחרת.
+          - article [ref=e438]:
+            - generic [ref=e439]: למשפחות
+            - img [ref=e441]
+            - heading "חוויה שמחברת את המשפחה" [level=3] [ref=e443]
+            - paragraph [ref=e444]: ילדים ומבוגרים נכנסים לאותה משימה, משתפים פעולה, מגלים מי חושב מהר ומי נשאר רגוע כשהשעון מתקתק.
+          - article [ref=e445]:
+            - generic [ref=e446]: לימי הולדת
+            - img [ref=e448]
+            - heading "יום הולדת שלא נשאר רק בתמונות" [level=3] [ref=e450]
+            - paragraph [ref=e451]: חוויה מלאה באקשן, משימות והפתעות שהופכת את החגיגה להרפתקה שכולם משתתפים בה.
+          - article [ref=e452]:
+            - generic [ref=e453]: לצוותים
+            - img [ref=e455]
+            - heading "גיבוש שמוציא את הצוות מהמסך" [level=3] [ref=e457]
+            - paragraph [ref=e458]: משימה קבוצתית שחושפת מנהיגות, חשיבה, תקשורת ושיתוף פעולה, באווירה משוחררת, מצחיקה ותחרותית.
+          - article [ref=e459]:
+            - generic [ref=e460]: לזוגות
+            - img [ref=e462]
+            - heading "דייט זוגי אחר" [level=3] [ref=e464]
+            - paragraph [ref=e465]: לדייט ראשון, ערב זוגי או הפתעה לא שגרתית. חוויה מצחיקה ותחרותית שמוציאה אתכם מהשגרה.
+          - article [ref=e466]:
+            - generic [ref=e467]: לאירועים פרטיים
+            - img [ref=e469]
+            - heading "אירוע פרטי במתחם" [level=3] [ref=e471]
+            - paragraph [ref=e472]: חוויה פרטית לקבוצה שלכם, עם יותר מרחב, אווירה אישית ואפשרות להתאים את הפעילות לאירוע שאתם מתכננים.
+      - generic [ref=e473]:
+        - generic [ref=e474]:
+          - paragraph [ref=e475]: שאלות נפוצות
+          - heading "כל מה שרוצים לדעת לפני שמזמינים" [level=2] [ref=e476]
+        - generic [ref=e477]:
+          - group [ref=e478]:
+            - generic "למי החוויה מתאימה?" [ref=e479] [cursor=pointer]:
+              - generic [ref=e480]: למי החוויה מתאימה?
+              - img [ref=e482]
+            - paragraph [ref=e484]: החוויה מתאימה לחברים, משפחות, זוגות, ימי הולדת, צוותים ואירועים פרטיים, עם התאמה לפי סוג הקבוצה.
+          - group [ref=e485]:
+            - generic "צריך ניסיון קודם בחדרי בריחה?" [ref=e486] [cursor=pointer]:
+              - generic [ref=e487]: צריך ניסיון קודם בחדרי בריחה?
+              - img [ref=e489]
+          - group [ref=e491]:
+            - generic "כמה זמן נמשכת הפעילות?" [ref=e492] [cursor=pointer]:
+              - generic [ref=e493]: כמה זמן נמשכת הפעילות?
+              - img [ref=e495]
+          - group [ref=e497]:
+            - generic "אפשר להזמין לקבוצה או לאירוע חברה?" [ref=e498] [cursor=pointer]:
+              - generic [ref=e499]: אפשר להזמין לקבוצה או לאירוע חברה?
+              - img [ref=e501]
+          - group [ref=e503]:
+            - generic "יש אפשרות ל-VIP או אירוח פרטי?" [ref=e504] [cursor=pointer]:
+              - generic [ref=e505]: יש אפשרות ל-VIP או אירוח פרטי?
+              - img [ref=e507]
+      - generic [ref=e510]:
+        - paragraph [ref=e511]: מוכנים לחוויה הבאה שלכם?
+        - heading "בואו נהפוך את הערב הבא שלכם למשהו שבאמת זוכרים" [level=2] [ref=e512]
+        - paragraph [ref=e513]: אם אתם מחפשים חוויה שמרגישה אחרת מהרגע הראשון, זה הזמן לשריין מקום ולבנות ערב שמדברים עליו גם אחרי שהוא נגמר.
+        - generic [ref=e514]:
+          - link "שריינו מקום" [ref=e515] [cursor=pointer]:
+            - /url: "#booking"
+            - generic [ref=e516]: שריינו מקום
+            - img [ref=e517]
+          - link "דברו איתנו בוואטסאפ" [ref=e519] [cursor=pointer]:
+            - /url: https://wa.me/972500000000
+            - generic [ref=e520]: דברו איתנו בוואטסאפ
+            - img [ref=e521]
+  - contentinfo [ref=e523]
