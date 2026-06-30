@@ -1,0 +1,54 @@
+- generic [ref=e2]:
+  - generic [ref=e3]: VISUAL COMPANION V2
+  - heading "כיוון מעט יותר ממותג, בלי להכביד" [level=1] [ref=e4]
+  - paragraph [ref=e5]: אותה מערכת תגיות עדינה, אבל עכשיו יש תגית אחת בכל כרטיס שמקבלת גבול ירקרק מעט מודגש וזוהר רך מאוד. היא לא מרגישה כמו כפתור, לא משתלטת על הכרטיס, ורק עוזרת לחדד את המסר הראשי של החדר.
+  - generic [ref=e6]:
+    - heading "1. Desktop room card badge layout" [level=2] [ref=e7]
+    - generic [ref=e8]:
+      - article [ref=e9]:
+        - generic [ref=e11]:
+          - paragraph [ref=e12]: משימת גיבורים קבוצתית
+          - heading "גיבורים נגד נבלים" [level=3] [ref=e13]
+          - paragraph [ref=e14]: העיר צריכה את הצוות שלכם
+          - paragraph [ref=e15]: הנבלים כבר התחילו את התוכנית, הזמן מתקתק, ורק שיתוף פעולה נכון יציל את המצב. משימה קצבית, מצחיקה ומלאת אקשן לזוגות, חברים ומשפחות.
+          - list [ref=e16]:
+            - listitem [ref=e17]: 2 קבוצות במקביל
+            - listitem [ref=e18]: משימה קצבית ומצחיקה
+            - listitem [ref=e19]: זוגות, חברים ומשפחות
+          - generic [ref=e20]: לפרטים והזמנה
+          - generic [ref=e21]: ההבלטה נשארת דקה מספיק כדי לא להתחרות בכפתור.
+      - article [ref=e22]:
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: משימת פנטזיה משפחתית
+          - heading "ספר הצללים" [level=3] [ref=e26]
+          - paragraph [ref=e27]: השער לעולם הבריחה נפתח
+          - paragraph [ref=e28]: יער קסום, שער סודי וזמן שמתחיל לרוץ. היכנסו לעולם פנטזיה מלא חידות, רמזים והפתעות, שבו כל החלטה מקרבת אתכם לפיצוח הסיפור.
+          - list [ref=e29]:
+            - listitem [ref=e30]: פנטזיה משפחתית
+            - listitem [ref=e31]: חידות, רמזים והפתעות
+            - listitem [ref=e32]: מומלץ מגיל 10+
+          - generic [ref=e33]: לפרטים והזמנה
+          - generic [ref=e34]: ההבלטה השקטה עובדת הכי טוב על מסר קצר וברור.
+  - generic [ref=e35]:
+    - heading "2. Mobile room card badge layout" [level=2] [ref=e36]
+    - generic [ref=e37]:
+      - article [ref=e38]:
+        - generic [ref=e40]:
+          - heading "גיבורים נגד נבלים" [level=3] [ref=e41]
+          - paragraph [ref=e42]: העיר צריכה את הצוות שלכם
+          - paragraph [ref=e43]: במובייל המסר המודגש עדיין נקרא ראשון, אבל שאר התגיות נשארות קלות ונעטפות טבעית.
+          - list [ref=e44]:
+            - listitem [ref=e45]: 2 קבוצות במקביל
+            - listitem [ref=e46]: משימה קצבית ומצחיקה
+            - listitem [ref=e47]: זוגות, חברים ומשפחות
+          - generic [ref=e48]: לפרטים והזמנה
+      - article [ref=e49]:
+        - generic [ref=e51]:
+          - heading "ספר הצללים" [level=3] [ref=e52]
+          - paragraph [ref=e53]: השער לעולם הבריחה נפתח
+          - paragraph [ref=e54]: הדגשה עדינה של גיל 10+ נותנת עוגן שיווקי ברור בלי להעמיס על הכרטיס.
+          - list [ref=e55]:
+            - listitem [ref=e56]: פנטזיה משפחתית
+            - listitem [ref=e57]: חידות, רמזים והפתעות
+            - listitem [ref=e58]: מומלץ מגיל 10+
+          - generic [ref=e59]: לפרטים והזמנה

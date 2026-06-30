@@ -538,6 +538,11 @@ function evm_content_page_01_get_icon( $icon ) {
 		'guide'         => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2zm0 2v14h10V5H7zm2 3h6v2H9V8zm0 4h6v2H9v-2zm0 4h4v2H9v-2zM4 7H2v10h2V7zm18 0h-2v10h2V7z"/></svg>',
 		'mission-flag'  => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h2v18H5V3zm4 1h9.5l-1.7 4 1.7 4H9V4zm2 2v4h4.5l-.85-2 .85-2H11z"/></svg>',
 		'play'          => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8L19 12 7 4.6zm2 3.58L15.17 12 9 15.82V8.18z"/></svg>',
+		'versus'        => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6.5l2.9 5L13 6.5h2.2l-4.1 6.4 4.2 6.6h-2.2L10 14.4l-3.1 5.1H4.7l4.2-6.6L4.8 6.5H7zm10.5.5a3 3 0 110 6 3 3 0 010-6zm0 10a3 3 0 110 6 3 3 0 010-6z"/></svg>',
+		'bolt'          => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L5 13h5l-1 9 10-12h-5l1-8h-2z"/></svg>',
+		'book-magic'    => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h9a3 3 0 013 3v11.5a1.5 1.5 0 01-1.5 1.5H8a4 4 0 00-2 .54V4zm0 17a2 2 0 012-2h8V7a1 1 0 00-1-1H8a2 2 0 00-2 2v13zm12-15l.7 1.8L20.5 8l-1.8.2L18 10l-.7-1.8-1.8-.2 1.8-.2L18 6zM11 8l.85 2.15L14 11l-2.15.85L11 14l-.85-2.15L8 11l2.15-.85L11 8z"/></svg>',
+		'puzzle'        => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3a2 2 0 012 2v1h1a2 2 0 110 4h-1v2h2a2 2 0 010 4h-2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-5h1a2 2 0 100-4H3V5a2 2 0 012-2h5zm7 9a2 2 0 012 2v5a2 2 0 01-2 2h-3v-2a2 2 0 10-4 0v2H9a2 2 0 01-2-2v-1h2a2 2 0 100-4H7v-1a2 2 0 012-2h8z"/></svg>',
+		'badge-10'      => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l7.5 3v6c0 5.13-3.34 9.9-7.5 11-4.16-1.1-7.5-5.87-7.5-11V5L12 2zm-1 6H9v6h2V8zm3 0a2.5 2.5 0 00-2.5 2.5v1A2.5 2.5 0 0014 14a2.5 2.5 0 002.5-2.5v-1A2.5 2.5 0 0014 8zm0 1.8c.39 0 .7.31.7.7v1c0 .39-.31.7-.7.7a.7.7 0 01-.7-.7v-1c0-.39.31-.7.7-.7zm4.75 6.7h-1.55L15.2 14l-2.75 2.5H10.9l2.7-2.5-2.7-2.5h1.55l2.75 2.5 2.75-2.5h1.55l-2.7 2.5 2.7 2.5z"/></svg>',
 	);
 
 	return isset( $icons[ $icon ] ) ? $icons[ $icon ] : '';
@@ -789,6 +794,32 @@ function evm_render_content_page_01( $attributes ) {
 	$content['hero']['subheadline']         = 'לא חייבים להיות קבוצה ענקית כדי להיכנס להרפתקה. גם זוג, שלושה חברים, משפחה או יום הולדת יכולים להפוך לצוות מנצח, עם חידות, צחוק וטיימר שמעלה את הדופק.';
 	$content['hero']['primary_cta_text']    = 'בחרו משימה והזמינו עכשיו';
 	$content['hero']['secondary_cta']['text'] = 'עזרו לי לבחור משימה';
+	$content['room_selection']['rooms'][0]['label']       = 'משימת גיבורים קבוצתית';
+	$content['room_selection']['rooms'][0]['name']        = 'גיבורים נגד נבלים';
+	$content['room_selection']['rooms'][0]['headline']    = 'העיר צריכה את הצוות שלכם';
+	$content['room_selection']['rooms'][0]['description'] = 'הנבלים כבר התחילו את התוכנית, הזמן מתקתק, ורק שיתוף פעולה נכון יציל את המצב. משימה קצבית, מצחיקה ומלאת אקשן לזוגות, חברים ומשפחות.';
+	$content['room_selection']['rooms'][0]['metadata']    = array(
+		array(
+			'icon'         => 'versus',
+			'text'         => '2 קבוצות במקביל',
+			'is_highlight' => true,
+		),
+		array( 'icon' => 'bolt', 'text' => 'משימה קצבית ומצחיקה' ),
+		array( 'icon' => 'group', 'text' => 'זוגות, חברים ומשפחות' ),
+	);
+	$content['room_selection']['rooms'][1]['label']       = 'משימת פנטזיה משפחתית';
+	$content['room_selection']['rooms'][1]['name']        = 'ספר הצללים';
+	$content['room_selection']['rooms'][1]['headline']    = 'השער לעולם הבריחה נפתח';
+	$content['room_selection']['rooms'][1]['description'] = 'יער קסום, שער סודי וזמן שמתחיל לרוץ. היכנסו לעולם פנטזיה מלא חידות, רמזים והפתעות, שבו כל החלטה מקרבת אתכם לפיצוח הסיפור.';
+	$content['room_selection']['rooms'][1]['metadata']    = array(
+		array( 'icon' => 'book-magic', 'text' => 'פנטזיה משפחתית' ),
+		array( 'icon' => 'puzzle', 'text' => 'חידות, רמזים והפתעות' ),
+		array(
+			'icon'         => 'badge-10',
+			'text'         => 'מומלץ מגיל 10+',
+			'is_highlight' => true,
+		),
+	);
 
 	if ( ! empty( $attributes['primary_cta_url'] ) ) {
 		$content['hero']['primary_cta_url']      = $attributes['primary_cta_url'];
@@ -1108,8 +1139,7 @@ function evm_render_content_page_01( $attributes ) {
 
 									<ul class="evm-content-page-01__room-card-meta">
 										<?php foreach ( $room['metadata'] as $metadata ) : ?>
-											<li>
-												<span aria-hidden="true"><?php echo evm_content_page_01_icon_html( $metadata['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+											<li<?php echo ! empty( $metadata['is_highlight'] ) ? ' class="is-highlight"' : ''; ?>>
 												<?php echo esc_html( $metadata['text'] ); ?>
 											</li>
 										<?php endforeach; ?>

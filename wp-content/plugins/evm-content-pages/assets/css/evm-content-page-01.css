@@ -448,6 +448,10 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   scroll-margin-top: calc(var(--evm-admin-offset) + 112px);
 }
 
+#rooms {
+  scroll-margin-top: calc(var(--evm-admin-offset) + 216px);
+}
+
 .evm-content-page-01__hero,
 .evm-content-page-01__section {
   margin-block: 0;
@@ -2300,6 +2304,7 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 .evm-content-page-01__section--featured-room {
   position: relative;
   padding-block: clamp(72px, 9vw, 128px);
+  padding-block-start: clamp(84px, 10vw, 142px);
 }
 
 .evm-content-page-01__section--featured-room::before {
@@ -2689,7 +2694,7 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   position: relative;
   z-index: 1;
   display: grid;
-  gap: clamp(28px, 4vw, 48px);
+  gap: clamp(24px, 3.2vw, 38px);
 }
 
 .evm-content-page-01__room-selection-header {
@@ -2708,7 +2713,7 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 }
 
 .evm-content-page-01__room-selection-header .evm-content-page-01__section-description {
-  max-width: 620px;
+  max-width: 640px;
   margin-inline: auto;
 }
 
@@ -2734,6 +2739,7 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
     linear-gradient(145deg, var(--evm-room-glow), transparent 38%),
     linear-gradient(155deg, var(--evm-card-surface-strong-top), var(--evm-card-surface-strong-bottom));
   box-shadow: var(--evm-shadow);
+  isolation: isolate;
 }
 
 .evm-content-page-01__room-card--shadows {
@@ -2757,6 +2763,7 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
   content: "";
   position: absolute;
   pointer-events: none;
+  z-index: 2;
 }
 
 .evm-content-page-01__room-card-media::before {
@@ -2767,10 +2774,11 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 }
 
 .evm-content-page-01__room-card-media::after {
-  inset: auto 9% 12%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--evm-room-support), transparent);
-  opacity: 0.48;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 10, 8, 0.08) 0%, rgba(5, 10, 8, 0.18) 42%, rgba(5, 10, 8, 0.52) 100%),
+    linear-gradient(90deg, rgba(5, 10, 8, 0.18), transparent 28%, transparent 72%, rgba(5, 10, 8, 0.14));
+  opacity: 1;
 }
 
 .evm-content-page-01__room-card-media img {
@@ -2810,17 +2818,17 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 .evm-content-page-01__room-card-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
-  padding: clamp(22px, 2.4vw, 30px);
+  padding: clamp(20px, 2vw, 26px);
 }
 
 .evm-content-page-01__room-card-label {
   margin: 0;
   color: var(--evm-accent);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 .evm-content-page-01__room-card-name {
@@ -2833,57 +2841,63 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 .evm-content-page-01__room-card-headline {
   margin: 0;
   color: color-mix(in srgb, var(--evm-text) 88%, var(--evm-room-support));
-  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
   font-weight: 800;
 }
 
 .evm-content-page-01__room-card-description {
-  min-height: 8.7em;
+  min-height: 7.1em;
   margin: 0;
   color: var(--evm-muted);
-  font-size: 0.98rem;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.68;
 }
 
 .evm-content-page-01__room-card-meta {
-  display: grid;
-  gap: 10px;
-  margin: auto 0 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 9px;
+  margin: auto 0 8px;
   padding: 0;
   list-style: none;
 }
 
 .evm-content-page-01__room-card-meta li {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 9px;
+  justify-content: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(8, 11, 18, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.015);
   color: var(--evm-muted);
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.evm-content-page-01__room-card-meta li > span {
-  display: inline-grid;
-  flex: 0 0 28px;
-  width: 28px;
-  height: 28px;
-  place-items: center;
-  border: 1px solid color-mix(in srgb, var(--evm-room-support) 30%, transparent);
-  border-radius: 9px;
-  color: var(--evm-room-support);
-  background: color-mix(in srgb, var(--evm-room-support) 8%, transparent);
-}
-
-.evm-content-page-01__room-card-meta svg {
-  width: 15px;
-  height: 15px;
+.evm-content-page-01__room-card-meta li.is-highlight {
+  color: var(--evm-text);
+  border-color: color-mix(in srgb, var(--evm-accent) 42%, rgba(255, 255, 255, 0.1));
+  background:
+    linear-gradient(180deg, rgba(182, 255, 34, 0.08), rgba(182, 255, 34, 0.02)),
+    rgba(8, 11, 18, 0.48);
+  box-shadow:
+    inset 0 0 0 1px rgba(182, 255, 34, 0.08),
+    0 0 18px rgba(182, 255, 34, 0.08);
 }
 
 .evm-content-page-01__room-card-content .evm-content-page-01__room-card-cta {
   flex: 0 0 auto;
-  width: 100%;
-  min-height: 50px;
-  margin-top: 4px;
+  width: min(100%, 248px);
+  min-height: 48px;
+  margin-top: 6px;
+  align-self: flex-start;
 }
 
 .evm-content-page-01__stats {
@@ -4290,6 +4304,7 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 
   .evm-content-page-01__section--featured-room {
     padding-block: 44px;
+    padding-block-start: 48px;
   }
 
   .evm-content-page-01__room-selection {
@@ -4312,14 +4327,27 @@ body.evm-gameit-landing-page .evm-content-page-01__shell > :not(.evm-gameit-head
 
   .evm-content-page-01__room-card-content {
     padding: 22px 18px;
+    gap: 9px;
   }
 
   .evm-content-page-01__room-card-description {
     min-height: 0;
+    font-size: 0.96rem;
+    line-height: 1.7;
   }
 
   .evm-content-page-01__room-card-meta {
     margin-top: 6px;
+  }
+
+  .evm-content-page-01__room-card-meta li {
+    padding: 7px 11px;
+    font-size: 0.78rem;
+    white-space: normal;
+  }
+
+  .evm-content-page-01__room-card-content .evm-content-page-01__room-card-cta {
+    width: 100%;
   }
 
   .evm-content-page-01__featured-room-grid {

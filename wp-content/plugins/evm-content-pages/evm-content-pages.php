@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'EVM_CONTENT_PAGES_VERSION', '0.2.12' );
+define( 'EVM_CONTENT_PAGES_VERSION', '0.2.15' );
 define( 'EVM_CONTENT_PAGES_PATH', plugin_dir_path( __FILE__ ) );
 define( 'EVM_CONTENT_PAGES_URL', plugin_dir_url( __FILE__ ) );
 
